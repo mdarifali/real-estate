@@ -2,7 +2,7 @@ import banner from '../../assets/images/Real_Estate_Banner.png';
 
 const Hero = () => {
     return (
-        <div className='min-h-fit bg-zinc-200 py-10'>
+        <div className='min-h-fit bg-cyan-200 pt-40 pb-20 relative'>
             <div className="container mx-auto w-[85%] sm:w-3/4">
                 <div className='flex flex-col sm:flex-row items-center gap-5'>
                     <div className='flex-1 order-2 sm:order-1 mb-5 sm:mb-0'>
