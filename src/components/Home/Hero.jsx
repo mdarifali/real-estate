@@ -41,7 +41,7 @@ const Hero = () => {
                         </select>
                     </div>
                     <div className="w-full mt-5">
-                        <button className='w-full py-3 bg-red-600 text-white mt-5 hover:bg-red-500'>SUBMIT</button>
+                        <button className='w-full py-3 bg-red-600 text-white mt-5 hover:bg-black transition duration-300 ease-in-out'>SUBMIT</button>
                     </div>
                 </div>
             </div>

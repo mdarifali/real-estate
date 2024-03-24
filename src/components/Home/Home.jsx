@@ -1,4 +1,5 @@
 import About from "../About/About";
+import Properties from "../Properties/Properties";
 import Hero from "./Hero";
 import PopularArea from "./PopularArea";
 
@@ -8,7 +9,8 @@ const Home = () => {
         <div>
             <Hero />
             <About />
-            <PopularArea/>
+            <PopularArea />
+            <Properties />
         </div>
     );
 };

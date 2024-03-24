@@ -11,7 +11,7 @@ const About = () => {
                     <h5 className='tracking-wide text-xl mb-5 text-red-500'>WOH WE ARE</h5>
                     <h2 className='text-4xl font-semibold mb-5'>Lorem ipsum dolor sit amet consectetur</h2>
                     <p className='text-md text-slate-700'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic culpa neque ullam accusamus eveniet saepe esse fuga beatae, fugit eius quibusdam quam molestiae porro voluptatum reprehenderit modi labore impedit? Vitae.</p>
-                    <button className='px-6 py-3 bg-red-600 text-white mt-7 hover:bg-red-500'>Read More</button>
+                    <button className='px-6 py-3 bg-red-600 text-white mt-7 hover:bg-black transition duration-300 ease-in-out'>Read More</button>
                 </div>
             </div>
         </div>
