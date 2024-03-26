@@ -7,6 +7,16 @@ import card_image6 from "../assets/images/card image6.jpg";
 import card_image7 from "../assets/images/card image7.jpg";
 import card_image8 from "../assets/images/card image8.jpg";
 import card_image9 from "../assets/images/card image9.jpg";
+import client_image1 from "../assets/images/client-1.jpg";
+import client_image2 from "../assets/images/client- 2.jpg";
+import client_image3 from "../assets/images/client- 3.jpg";
+import client_image4 from "../assets/images/client- 4.jpg";
+
+
+import { MdNoteAlt } from "react-icons/md";
+import { FaHome, FaSearch, FaNotesMedical, FaCameraRetro } from "react-icons/fa";
+import { GoLaw } from "react-icons/go";
+
 
 
 export const property =[
@@ -129,3 +139,89 @@ export const property =[
     },
 
 ];
+
+export const services = [
+    {
+        id: 1,
+        icon: MdNoteAlt,
+        title: "Sale Your Home",
+        desc: "We sale your home at the best price"
+    },
+    {
+        id: 2,
+        icon: FaHome,
+        title: "Home Loans",
+        desc: "We are offer you free consultancy to get loan"
+    },
+    {
+        id: 3,
+        icon: GoLaw,
+        title: "Sale Your Home",
+        desc: "We sale your home at the best price"
+    },
+    {
+        id: 4,
+        icon: FaNotesMedical,
+        title: "Evaluations",
+        desc: "We prepare your home evaluation to get mortgage loan"
+    },
+    {
+        id: 5,
+        icon: FaCameraRetro,
+        title: "Photoshoot",
+        desc: "We prepare your home visual presentation"
+    },
+    {
+        id: 6,
+        icon: FaSearch,
+        title: "Home Inspecton",
+        desc: "We make sure you will get what you ware por"
+    },
+];
+
+export const reviews = [
+    {
+        id: 1,
+        image: client_image1,
+        name: "Ana Andreson",
+        text: "Very Good Team",
+        feedback: "This real estate service was very good and they provide good customer support."
+    },
+    {
+        id: 2,
+        image: client_image2,
+        name: "Jon Don",
+        text: "Very Good Team",
+        feedback: "This real estate service was very good and they provide good customer support."
+    },
+    {
+        id: 3,
+        image: client_image3,
+        name: "Adam smith",
+        text: "Best Affordable Price",
+        feedback: "This real estate service was very good and they provide good customer support."
+    },
+    {
+        id: 3,
+        image: client_image4,
+        name: "Jack Michael",
+        text: "Very Good Stuff",
+        feedback: "This real estate service was very good and they provide good customer support."
+    },
+    {
+        id: 5,
+        image: client_image3,
+        name: "William Smith",
+        text: "Excellent service",
+        feedback: "This real estate service was very good and they provide good customer support."
+    },
+    {
+        id: 6,
+        image: client_image2,
+        name: "Henry James",
+        text: "Awesome Service",
+        feedback: "This real estate service was very good and they provide good customer support."
+    },
+    
+
+]

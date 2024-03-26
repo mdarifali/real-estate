@@ -7,7 +7,7 @@ const Properties = () => {
         <div className="">
             <div className="container mx-auto w-[85%] sm:w-3/4 py-20">
                 <div className='mb-10'>
-                    <h5 className='tracking-wide text-xl mb-5 text-red-500'>PROPERTIES</h5>
+                    <h5 className='tracking-wider text-[20px] mb-5 text-red-500'>PROPERTIES</h5>
                     <h2 className='tracking-wide text-3xl sm:text-4xl font-bold'>Explore The Latest</h2>
                 </div>
                 <div className="w-full grid-cols-1 grid sm:grid-cols-3 justify-center items-center gap-8">
@@ -15,7 +15,7 @@ const Properties = () => {
                         property.map((card) => {
                             return (
                                 <div key={card.id} className='shadow-xl'>
-                                    <div className='h-[280px] bg-cover bg-center p-4 rounded-xl hover:scale-105 transition duration-300 ease-in-out flex flex-col justify-between items-end ' style={{ backgroundImage: `url(${card.images})` }}>
+                                    <div className='h-[270px] bg-cover bg-center p-4 rounded-xl flex flex-col justify-between items-end ' style={{ backgroundImage: `url(${card.images})` }}>
                                         <div className='w-full flex justify-between items-center'>
                                             <div>
                                                 <button className='bg-red-600 px-3 py-1 rounded-full text-white text-[13px] hover:bg-white hover:text-black transition duration-300 ease-in-out'>Featured</button>
