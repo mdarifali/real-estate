@@ -7,8 +7,8 @@ const Testimonials = () => {
         <div>
             <div className="container mx-auto w-[85%] sm:w-3/4 py-20">
                 <div className='mb-10'>
-                    <h5 className='tracking-wider text-[20px] mb-5 text-red-500'>OUR SERVICES</h5>
-                    <h2 className='tracking-wide text-3xl sm:text-4xl font-bold'>Top Real Estate Services</h2>
+                    <h5 className='tracking-wider text-[20px] mb-5 text-red-500'>TESTIMONIAL</h5>
+                    <h2 className='tracking-wide text-3xl sm:text-4xl font-bold'>Our Customer Revies</h2>
                 </div>
                 <div className="w-full grid grid-cols-1 sm:grid-cols-3 justify-center items-center gap-8">
                     {

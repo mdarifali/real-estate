@@ -27,7 +27,7 @@ const Header = () => {
                             </div>
                             <div className="hidden sm:ml-6 items-center sm:block">
                                 <div className="flex space-x-4 ">
-                                    <a href="#" className="text-black hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium" aria-current="page">Dashboard</a>
+                                    <Link to="/" className="text-black hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium" aria-current="page">Home</Link>
                                     <a href="#" className="text-black hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Team</a>
                                     <a href="#" className="text-black hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Projects</a>
                                     <Link to="/propertis" className="text-black hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Propertis</Link>

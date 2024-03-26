@@ -81,7 +81,7 @@ const Properties = () => {
 
                 </div>
                 <div className='flex justify-end mt-5'>
-                    <Link to="/" className='sm:px-6 sm:py-3 py-2 px-4 border border-red-600 text-black mt-7 hover:bg-red-600 hover:text-white transition duration-300 ease-in-out rounded-full'>See More...</Link>
+                    <Link to="/propertis" type="button" className='sm:px-6 sm:py-3 py-2 px-4 border border-red-600 text-black mt-7 hover:bg-red-600 hover:text-white transition rounded-full'>See More...</Link>
                 </div>
             </div>
         </div>
