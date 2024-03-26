@@ -1,8 +1,8 @@
 
 const Contact = () => {
     return (
-        <div>
-            This is contact
+        <div className="container mx-auto w-[85%] sm:w-3/4 py-20">
+           
         </div>
     );
 };

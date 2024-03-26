@@ -1,9 +1,8 @@
 import { FaMapMarkerAlt, FaCamera, FaVideo, FaBath, FaBed, FaThList, FaUserCircle, FaShareAlt, FaHeart, FaPlus } from "react-icons/fa";
 import { property } from "../../components/data.js";
-import { Link } from "react-router-dom";
 
 
-const Properties = () => {
+const AllProperties = () => {
     return (
         <div className="">
             <div className="container mx-auto w-[85%] sm:w-3/4 py-20">
@@ -13,7 +12,7 @@ const Properties = () => {
                 </div>
                 <div className="w-full grid-cols-1 grid sm:grid-cols-3 justify-center items-center gap-8">
                     {
-                        property.slice(0,6).map((card) => {
+                        property.map((card) => {
                             return (
                                 <div key={card.id} className='shadow-xl'>
                                     <div className='h-[270px] bg-cover bg-center p-4 rounded-xl flex flex-col justify-between items-end ' style={{ backgroundImage: `url(${card.images})` }}>
@@ -81,11 +80,11 @@ const Properties = () => {
 
                 </div>
                 <div className='flex justify-end mt-5'>
-                    <Link to="/" className='sm:px-6 sm:py-3 py-2 px-4 border border-red-600 text-black mt-7 hover:bg-red-600 hover:text-white transition duration-300 ease-in-out rounded-full'>See More...</Link>
+                    <button className='sm:px-6 sm:py-3 py-2 px-4 border border-red-600 text-black mt-7 hover:bg-red-600 hover:text-white transition duration-300 ease-in-out rounded-full'>See More...</button>
                 </div>
             </div>
         </div>
     );
 };
 
-export default Properties;
+export default AllProperties;

@@ -19,16 +19,16 @@ const Testimonials = () => {
                                         <img className="w-[70px] h-[70px] rounded-full border-2 border-red-400" src={item.image} alt="client-iamge" />
                                         <div>
                                             <h4 className="text-xl tracking-wide font-semibold mb-1">{item.name}</h4>
-                                            <p className="text-slate-600">{item.text}</p>
+                                            <p className="text-[#2c3e50]">{item.text}</p>
                                         </div>
                                     </div>
-                                    <p className="text-md text-justify text-slate-600">{item.feedback}</p>
+                                    <p className="text-md text-justify text-[#2c3e50]">{item.feedback}</p>
                                     <div className="flex justify-start items-start gap-2 w-full">
-                                        <FaStar className="text-yellow-400 size-4" />
-                                        <FaStar className="text-yellow-400 size-4" />
-                                        <FaStar className="text-yellow-400 size-4" />
-                                        <FaStar className="text-yellow-400 size-4" />
-                                        <FaStar className="text-yellow-400 size-4" />
+                                        <FaStar className="text-yellow-400 size-5 hover:scale-150 transition" />
+                                        <FaStar className="text-yellow-400 size-4 hover:scale-150 transition" />
+                                        <FaStar className="text-yellow-400 size-4 hover:scale-150 transition" />
+                                        <FaStar className="text-yellow-400 size-4 hover:scale-150 transition" />
+                                        <FaStar className="text-yellow-400 size-5 hover:scale-150 transition" />
                                     </div>
                                 </div>
                             )

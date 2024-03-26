@@ -18,7 +18,7 @@ const Services = () => {
                                         <itme.icon className="size-10 text-red-400" />
                                     </div>
                                     <h3 className="tracking-wide text-[22px] font-semibold mb-2">{itme.title}</h3>
-                                    <p>{itme.desc}</p>
+                                    <p className="text-[16px] text-slate-700">{itme.desc}</p>
                                     <button className="mt-4 border-b border-red-600 text-red-600">Read More</button>
                                 </div>
                             )
