@@ -6,7 +6,7 @@ import image2 from '../../assets/images/card image2.jpg';
 
 const Footer = () => {
     return (
-        <div className="bg-gray-200">
+        <div className="">
             <footer className="container mx-auto w-[85%] sm:w-3/4 py-16">
                 <div className="w-full grid grid-cols-1 sm:grid-cols-3 justify-center items-center gap-10">
                     <div className="flex flex-col justify-center item-start gap-5">
