@@ -10,7 +10,7 @@ const Contact = () => {
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 justify-center items-center gap-8">
                     <div className='w-full flex flex-col justify-start'>
-                        <img className='rounded-2xl max-h-[550px] max-w-[550px]' src={mapImage} alt="" />
+                        <img className='rounded-2xl max-h-[550px]' src={mapImage} alt="" />
                     </div>
 
                     <div className="flex justify-center items-center">

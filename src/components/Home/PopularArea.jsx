@@ -10,7 +10,7 @@ const PopularArea = () => {
                     <div className='mb-5'>
                         <h5 className='tracking-wide text-xl mb-6 text-red-500'>POPULAR AREAS</h5>
                         <h2 className='tracking-wide text-3xl sm:text-4xl font-bold mb-3'>Explore Most</h2>
-                        <h2 className='tracking-wide text-3xl sm:text-4xl font-bold'>Popular Areas</h2>
+                        <h2 className='tracking-wide text-3xl sm:text-4xl font-bold'>Popular Areas...</h2>
                     </div>
                     <div className="grid-cols-1 grid col-span-2 sm:grid-cols-3 justify-center items-center gap-8 sm:gap-5">
                         <div className='h-[400px] bg-cover bg-center rounded-xl hover:scale-105 transition' style={{ backgroundImage: `url(${pImage1})` }}></div>

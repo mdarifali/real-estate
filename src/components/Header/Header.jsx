@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import logo from "../../assets/images/real_estate_logo.png";
+import logo from "../../assets/images/Logo.png";
 
 const Header = () => {
 
@@ -23,14 +23,14 @@ const Header = () => {
                         </div>
                         <div className="flex py-5 flex-1 items-center justify-end sm:justify-between">
                             <div className="flex items-center">
-                                <img className="h-16 sm:h-20 w-auto" src={logo} alt="Your Company logo"/>
+                                <img className="h-16 sm:h-24 w-auto" src={logo} alt="Your Company logo"/>
                             </div>
                             <div className="hidden sm:ml-6 items-center sm:block">
                                 <div className="flex space-x-4 ">
-                                    <Link to="/" className="text-black hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium" aria-current="page">Home</Link>
-                                    <a href="#" className="text-black hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Team</a>
-                                    <a href="#" className="text-black hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Projects</a>
-                                    <Link to="/propertis" className="text-black hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Propertis</Link>
+                                    <Link to="/" className="text-white hover:bg-gray-700 hover:text-black uppercase rounded-md px-3 py-2 text-sm font-bold tracking-wider" aria-current="page">Home</Link>
+                                    <a href="#" className="text-white hover:bg-gray-700 hover:text-black uppercase rounded-md px-3 py-2 text-sm font-bold tracking-wider">Team</a>
+                                    <a href="#" className="text-white hover:bg-gray-700 hover:text-black uppercase rounded-md px-3 py-2 text-sm font-bold tracking-wider">Projects</a>
+                                    <Link to="/propertis" className="text-white hover:bg-gray-700 hover:text-black uppercase rounded-md px-3 py-2 text-sm font-bold tracking-wider">Propertis</Link>
                                 </div>
                             </div>
                         </div>

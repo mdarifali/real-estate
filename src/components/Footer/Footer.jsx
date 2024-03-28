@@ -1,12 +1,12 @@
-import { FaFacebookF, FaTwitter, FaLinkedinIn, FaYoutube, FaMapMarkerAlt, FaPhoneAlt } from "react-icons/fa";
+import { FaFacebookF, FaTwitter, FaLinkedinIn, FaYoutube, FaMapMarkerAlt, FaPhoneAlt, FaArrowUp } from "react-icons/fa";
 import { IoIosMailOpen } from "react-icons/io";
-import logo from '../../assets/images/real_estate_logo.png';
+import logo from '../../assets/images/Logo.png';
 import image1 from '../../assets/images/card image1.jpg';
 import image2 from '../../assets/images/card image2.jpg';
 
 const Footer = () => {
     return (
-        <div className="">
+        <div className="relative">
             <footer className="container mx-auto w-[85%] sm:w-3/4 py-16">
                 <div className="w-full grid grid-cols-1 sm:grid-cols-3 justify-center items-center gap-10">
                     <div className="flex flex-col justify-center item-start gap-5">
@@ -14,16 +14,16 @@ const Footer = () => {
                         <p className="text-slate-600 text-justify">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nesciunt modi ullam illo nam, voluptates ab.</p>
                         <div className="flex flex-col justify-center item-start gap-5">
                             <div className="flex justify-start items-start gap-3 mt-2">
-                                <div className="p-2 rounded-2xl bg-black transition hover:bg-red-500 cursor-pointer hover:scale-110">
+                                <div className="p-2 rounded-2xl bg-black hover:bg-red-500 transition cursor-pointer hover:scale-110">
                                     <FaFacebookF className="size-4 text-white" />
                                 </div>
-                                <div className="p-2 rounded-2xl bg-black transition hover:bg-red-500 cursor-pointer hover:scale-110">
+                                <div className="p-2 rounded-2xl bg-black hover:bg-red-500 transition cursor-pointer hover:scale-110">
                                     <FaTwitter className="size-4 text-white" />
                                 </div>
-                                <div className="p-2 rounded-2xl bg-black transition hover:bg-red-500 cursor-pointer hover:scale-110">
+                                <div className="p-2 rounded-2xl bg-black hover:bg-red-500 transition cursor-pointer hover:scale-110">
                                     <FaLinkedinIn className="size-4 text-white" />
                                 </div>
-                                <div className="p-2 rounded-2xl bg-black transition hover:bg-red-500 cursor-pointer hover:scale-110">
+                                <div className="p-2 rounded-2xl bg-black hover:bg-red-500 transition cursor-pointer hover:scale-110">
                                     <FaYoutube className="size-4 text-white" />
                                 </div>
                             </div>
@@ -70,7 +70,12 @@ const Footer = () => {
                 </div>
             </footer>
             <div className="bg-slate-200 p-5 flex justify-center item-center gap-5">
-                <h1 className="text-black tracking-wider text-justify font-thin text-sm">Copyright @  2024 Real Estate | All Rights Reserved by <span className="font-bold">ARIF ALI</span></h1>
+                <h1 className="text-black tracking-wider text-justify font-thin text-sm">Copyright @  2024 Real Estate | Rights Reserved <span className="font-bold">ARIF ALI</span></h1>
+            </div>
+            <div className="p-4 bg-red-500 rounded-full fixed right-1 bottom-20 hover:bg-black transition">
+                <a href="#hero">
+                    <FaArrowUp className="text-white"/>
+                </a>
             </div>
         </div>
     );
