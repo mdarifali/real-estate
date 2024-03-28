@@ -2,26 +2,26 @@ import banner from '../../assets/images/Hero-banner.jpg';
 
 const Hero = () => {
     return (
-        <div id='hero' className='max-h-fit pt-40 pb-10 mb-0 sm:mb-36 bg-cover bg-center' style={{ backgroundImage: `url(${banner})` }}>
-            <div className="container mx-auto w-[85%] sm:w-3/4 py-20">
-                <div className='flex flex-col sm:flex-row items-center gap-5 text-white'>
-                    <div className='flex-1 order-2 sm:order-1 mb-5 sm:mb-0 w-full'>
+        <div id='hero' className='max-h-fit pt-40 pb-10 mb-0 sm:mb-36 bg-cover bg-center bg-fixed bg-no-repeat' style={{ backgroundImage: `url(${banner})` }}>
+            <div className="container mx-auto w-[85%] sm:w-3/4 pt-0 sm:pt-20 pb-14">
+                <div className='text-white flex flex-col sm:flex-row items-center gap-12'>
+                    <div className='w-full flex-1'>
                         <h1 className='tracking-wide text-4xl sm:text-6xl font-bold sm:font-extrabold mb-5'>Find your next home in Las Vegas</h1>
                         <p className='text-md sm:text-xl'>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corporis, a! Assumenda magni fuga molestiae commodi?</p>
                     </div>
-                    <div className='flex-1 order-1 sm:order-2 mb-8 sm:mb-0'>
-                        <div className='flex flex-col bg-[#f5f6fa] p-6 rounded-2xl items-center gap-6'>
+                    <div className='w-full flex-1 bg-white rounded-xl'>
+                        <div className='flex flex-col gap-6 px-8 py-14'>
                             <div className='w-full '>
-                                <h1 className='tracking-wide text-black text-[20px]'>LOCATION</h1>
+                                <h1 className='tracking-wide text-black text-[20px]'>Location</h1>
                                 <input
                                     type="text"
                                     placeholder='Enter and address, state, city or pincode'
-                                    className='w-full p-2 mt-2 border-b-2 border-gray-500 outline-none bg-transparent'
+                                    className='w-full text-black p-2 mt-2 border-b-2 border-gray-500 outline-none bg-transparent'
                                 />
                             </div>
                             <div className='w-full'>
-                                <h1 className='tracking-wide text-black text-[20px]'>TYPE</h1>
-                                <select className='w-full p-2 mt-2 border-b-2 border-gray-500 outline-none bg-transparent' name="selectOption" id="selectOption">
+                                <h1 className='tracking-wide text-black text-[20px]'>Type</h1>
+                                <select className='w-full p-2 text-black mt-2 border-b-2 border-gray-500 outline-none bg-transparent' name="selectOption" id="selectOption">
                                     <option value="" disabled selected>Select Property</option>
                                     <option value="option1">Rentals</option>
                                     <option value="option1">Sales</option>
@@ -29,8 +29,8 @@ const Hero = () => {
                                 </select>
                             </div>
                             <div className='w-full'>
-                                <h1 className='tracking-wide text-black text-[20px]'>CATEGORY</h1>
-                                <select className='w-full p-2 mt-2 border-b-2 border-gray-500 outline-none bg-transparent' name="selectOption" id="selectOption">
+                                <h1 className='tracking-wide text-black text-[20px]'>Category</h1>
+                                <select className='w-full p-2 text-black mt-2 border-b-2 border-gray-500 outline-none bg-transparent' name="selectOption" id="selectOption">
                                     <option value="" disabled selected>Property Category</option>
                                     <option value="option1">Apartment</option>
                                     <option value="option1">Duples</option>
