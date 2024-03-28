@@ -1,10 +1,11 @@
 import { FaMapMarkerAlt, FaCamera, FaVideo, FaBath, FaBed, FaThList, FaUserCircle, FaShareAlt, FaHeart, FaPlus } from "react-icons/fa";
 import { property } from "../../components/data.js";
+import SubHeader from "../Header/SubHeader.jsx";
 
 
 const AllProperties = () => {
     return (
-        <div className="">
+        <>  <SubHeader />
             <div className="container mx-auto w-[85%] sm:w-3/4 py-20">
                 <div className='mb-10'>
                     <h5 className='tracking-wider text-[20px] mb-5 text-red-500'>PROPERTIES</h5>
@@ -83,7 +84,7 @@ const AllProperties = () => {
                     <button className='sm:px-6 sm:py-3 py-2 px-4 border border-red-600 text-black mt-7 hover:bg-red-600 hover:text-white transition duration-300 ease-in-out rounded-full'>See More...</button>
                 </div> */}
             </div>
-        </div>
+        </>
     );
 };
 

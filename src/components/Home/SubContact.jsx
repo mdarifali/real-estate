@@ -1,9 +1,8 @@
 import mapImage from '../../assets/images/Google Map.jpg';
-import SubHeader from './../Header/SubHeader';
 
-const Contact = () => {
+const SubContact = () => {
     return (
-        <>  <SubHeader /> 
+        <>  
             <div className="bg-[#d9edbf9d]">
                 <div className="container mx-auto w-[85%] sm:w-3/4 py-20">
                     <div className='mb-10'>
@@ -34,4 +33,4 @@ const Contact = () => {
     );
 };
 
-export default Contact;
+export default SubContact;

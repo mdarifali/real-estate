@@ -1,4 +1,4 @@
-import { FaFacebookF, FaTwitter, FaLinkedinIn, FaYoutube, FaMapMarkerAlt, FaPhoneAlt, FaArrowUp } from "react-icons/fa";
+import { FaFacebookF, FaTwitter, FaLinkedinIn, FaYoutube, FaMapMarkerAlt, FaPhoneAlt, } from "react-icons/fa";
 import { IoIosMailOpen } from "react-icons/io";
 import logo from '../../assets/images/Logo.png';
 import image1 from '../../assets/images/card image1.jpg';
@@ -6,11 +6,11 @@ import image2 from '../../assets/images/card image2.jpg';
 
 const Footer = () => {
     return (
-        <div className="relative">
-            <footer className="container mx-auto w-[85%] sm:w-3/4 py-16">
+        <div className="">
+            <footer className="container mx-auto w-[85%] sm:w-3/4 py-16 border-t-2">
                 <div className="w-full grid grid-cols-1 sm:grid-cols-3 justify-center items-center gap-10">
                     <div className="flex flex-col justify-center item-start gap-5">
-                        <img src={logo} className="w-[150px]" alt="site-logo" />
+                        <img src={logo} className="w-[120px]" alt="site-logo" />
                         <p className="text-slate-600 text-justify">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nesciunt modi ullam illo nam, voluptates ab.</p>
                         <div className="flex flex-col justify-center item-start gap-5">
                             <div className="flex justify-start items-start gap-3 mt-2">
@@ -72,11 +72,7 @@ const Footer = () => {
             <div className="bg-slate-200 p-5 flex justify-center item-center gap-5">
                 <h1 className="text-black tracking-wider text-justify font-thin text-sm">Copyright @  2024 Real Estate | Rights Reserved <span className="font-bold">ARIF ALI</span></h1>
             </div>
-            <div className="p-4 bg-red-500 rounded-full fixed right-1 bottom-20 hover:bg-black transition">
-                <a href="#hero">
-                    <FaArrowUp className="text-white"/>
-                </a>
-            </div>
+            
         </div>
     );
 };

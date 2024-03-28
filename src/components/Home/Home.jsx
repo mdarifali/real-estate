@@ -1,22 +1,26 @@
-import About from "../About/About";
-import Contact from "../Contact/Contact";
+import SubContact from "./SubContact";
+import Header from "../Header/Header";
 import Properties from "../Properties/Properties";
-import Services from "../Services/Services";
-import Testimonials from "../Testimonials/Testimonials";
+import Testimonials from "./Testimonials";
 import Hero from "./Hero";
 import PopularArea from "./PopularArea";
+import ScrollTop from "./ScrollTop";
+import SubAbout from "./SubAbout";
+import SubServices from "./SubServices";
 
 
 const Home = () => {
     return (
-        <div>
+        <div className="relative">
+            <Header />
             <Hero />
-            <About />
+            <SubAbout />
             <PopularArea />
             <Properties />
-            <Services />
+            <SubServices />
             <Testimonials />
-            <Contact />
+            <SubContact />
+            <ScrollTop />
         </div>
     );
 };
