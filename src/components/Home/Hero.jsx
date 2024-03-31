@@ -6,7 +6,7 @@ const Hero = () => {
             <div className="container mx-auto w-[85%] sm:w-3/4 pt-0 sm:pt-20 pb-14">
                 <div className='text-white flex flex-col sm:flex-row items-center gap-12'>
                     <div className='w-full flex-1'>
-                        <h1 className='tracking-wide text-4xl sm:text-6xl font-bold sm:font-extrabold mb-5'>Find your next home in Las Vegas</h1>
+                        <h1 className='tracking-wider text-4xl sm:text-6xl font-bold sm:font-extrabold mb-10'>Find your next home in Las Vegas</h1>
                         <p className='text-md sm:text-xl'>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corporis, a! Assumenda magni fuga molestiae commodi?</p>
                     </div>
                     <div className='w-full flex-1 bg-white rounded-xl'>

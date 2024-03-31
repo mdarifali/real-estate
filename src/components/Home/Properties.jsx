@@ -1,5 +1,5 @@
 import { FaMapMarkerAlt, FaCamera, FaVideo, FaBath, FaBed, FaThList, FaUserCircle, FaShareAlt, FaHeart, FaPlus } from "react-icons/fa";
-import { property } from "../../components/data.js";
+import { property } from "../data.js";
 import { Link } from "react-router-dom";
 
 
@@ -13,30 +13,32 @@ const Properties = () => {
                 </div>
                 <div className="w-full grid-cols-1 grid sm:grid-cols-3 justify-center items-center gap-8">
                     {
-                        property.slice(0,6).map((card) => {
+                        property.slice(0, 6).map((card) => {
                             return (
                                 <div key={card.id} className='shadow-xl'>
-                                    <div className='h-[270px] bg-cover bg-center p-4 rounded-xl flex flex-col justify-between items-end ' style={{ backgroundImage: `url(${card.images})` }}>
-                                        <div className='w-full flex justify-between items-center'>
-                                            <div>
-                                                <button className='bg-red-600 px-3 py-1 rounded-full text-white text-[13px] hover:bg-white hover:text-black transition duration-300 ease-in-out'>Featured</button>
+                                    <Link to={`/property/${card.id}`}>
+                                        <div className='h-[270px] bg-cover bg-center p-4 rounded-xl flex flex-col justify-between items-end ' style={{ backgroundImage: `url(${card.images})` }}>
+                                            <div className='w-full flex justify-between items-center'>
+                                                <div>
+                                                    <button className='bg-red-600 px-3 py-1 rounded-full text-white text-[13px] hover:bg-white hover:text-black transition duration-300 ease-in-out'>Featured</button>
+                                                </div>
+                                                <div className='flex gap-2'>
+                                                    <button className='bg-red-600 px-3 py-1 rounded-full text-white text-[13px] hover:bg-white hover:text-black transition duration-300 ease-in-out'>Sales</button>
+                                                    <button className='bg-red-600 px-3 py-1 rounded-full text-white text-[13px] hover:bg-white hover:text-black transition duration-300 ease-in-out'>Active</button>
+                                                </div>
                                             </div>
-                                            <div className='flex gap-2'>
-                                                <button className='bg-red-600 px-3 py-1 rounded-full text-white text-[13px] hover:bg-white hover:text-black transition duration-300 ease-in-out'>Sales</button>
-                                                <button className='bg-red-600 px-3 py-1 rounded-full text-white text-[13px] hover:bg-white hover:text-black transition duration-300 ease-in-out'>Active</button>
+                                            <div className='w-full flex justify-between items-end backdrop-brightness-50 py-2 px-3 rounded-lg'>
+                                                <div className='flex justify-start items-center gap-2'>
+                                                    <FaMapMarkerAlt className='size-5 text-white' />
+                                                    <p className='text-white text-xs'>{card.address}</p>
+                                                </div>
+                                                <div className='flex justify-center items-center gap-5'>
+                                                    <FaCamera className='size-5 text-white' />
+                                                    <FaVideo className='size-5 text-white' />
+                                                </div>
                                             </div>
                                         </div>
-                                        <div className='w-full flex justify-between items-end backdrop-brightness-50 py-2 px-3 rounded-lg'>
-                                            <div className='flex justify-start items-center gap-2'>
-                                                <FaMapMarkerAlt className='size-5 text-white' />
-                                                <p className='text-white text-xs'>{card.address}</p>
-                                            </div>
-                                            <div className='flex justify-center items-center gap-5'>
-                                                <FaCamera className='size-5 text-white' />
-                                                <FaVideo className='size-5 text-white' />
-                                            </div>
-                                        </div>
-                                    </div>
+                                    </Link>
                                     <div className='w-full p-4 flex flex-col justify-center items-start gap-2'>
                                         <h4 className='text-lg text-black'>{card.name}</h4>
                                         <h3 className='text-xl font-bold text-red-600'>$ {card.price}</h3>

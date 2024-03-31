@@ -4,7 +4,7 @@ import SubHeader from './../Header/SubHeader';
 const Contact = () => {
     return (
         <>  <SubHeader /> 
-            <div className="bg-[#d9edbf9d]">
+            <div className="">
                 <div className="container mx-auto w-[85%] sm:w-3/4 py-20">
                     <div className='mb-10'>
                         <h5 className='tracking-wider text-[20px] mb-5 text-red-500'>CONTACT US</h5>

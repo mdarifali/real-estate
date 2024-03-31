@@ -8,3 +8,20 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+#slider-boxes {
+    display: flex !important;
+}
+
+.slick-slide div{
+    margin: 10px;
+}
+
+.slick-prev::before{
+   color: rgb(0, 0, 0);
+   margin-left: 20px;
+}
+
+.slick-next::before {
+    color: rgb(0, 0, 0);
+}
