@@ -12,7 +12,6 @@ import client_image2 from "../assets/images/client- 2.jpg";
 import client_image3 from "../assets/images/client- 3.jpg";
 import client_image4 from "../assets/images/client- 4.jpg";
 
-
 import { MdNoteAlt } from "react-icons/md";
 import { FaHome, FaSearch, FaNotesMedical, FaCameraRetro } from "react-icons/fa";
 import { GoLaw } from "react-icons/go";
