@@ -42,7 +42,7 @@ const Properties = () => {
                                     <div className='w-full p-4 flex flex-col justify-center items-start gap-2'>
                                         <h4 className='text-lg text-black'>{card.name}</h4>
                                         <h3 className='text-xl font-bold text-red-600'>$ {card.price}</h3>
-                                        <p>{card.about}</p>
+                                        <p>{card.about.slice(0, 90)}</p>
                                         <div className='flex justify-center items-start gap-4 mt-2'>
                                             <div className='flex justify-center items-center gap-2'>
                                                 <FaBath className='text-red-400 size-5' />

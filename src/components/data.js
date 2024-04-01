@@ -25,11 +25,12 @@ export const property =[
         address: "New York City, New York",
         name: "Brand New House",
         price: 500,
-        about: "Beutiful, updated, ground level co-op apartment with auto garage",
+        about: "Mesmerized by this sun-drenched well-maintained home that has it all and waiting for you. This prestigious white glove condo building  is located on a cobblestone quiet Cul-de sac. This stunning luxury studio has it all full city and river views , W/D 24 hours doorman, concierge services, health club , 60-foot swimming pool, steam room. Transportation 2 Ave Subway M31, and M72 to central park and the west side A perfect pied-a -terre, and investor, Pets are welcome.",
         bed: 3,
         bath: 4,
         area: "230 sq ft",
         owner: "Alice Adams",
+        contact: "3930 73 83 00",
 
     },
     {   
@@ -38,11 +39,12 @@ export const property =[
         address: "New York City, New York",
         name: "Brand New House",
         price: 650,
-        about: "Beutiful, updated, ground level co-op apartment with auto garage",
+        about: "Mesmerized by this sun-drenched well-maintained home that has it all and waiting for you. This prestigious white glove condo building is located on a cobblestone quiet Cul-de sac. This stunning luxury studio has it all full city and river views , W/D 24 hours doorman, concierge services, health club , 60-foot swimming pool, steam room. Transportation 2 Ave Subway M31, and M72 to central park and the west side A perfect pied-a -terre, and investor, Pets are welcome.",
         bed: 3,
         bath: 4,
         area: "230 sq ft",
         owner: "Alice Adams",
+        contact: "3930 73 83 00",
 
     },
     {   
@@ -51,11 +53,12 @@ export const property =[
         address: "New York City, New York",
         name: "Brand New House",
         price: 900,
-        about: "Beutiful, updated, ground level co-op apartment with auto garage",
+        about: "Mesmerized by this sun-drenched well-maintained home that has it all and waiting for you. This prestigious white glove condo building is located on a cobblestone quiet Cul-de sac. This stunning luxury studio has it all full city and river views , W/D 24 hours doorman, concierge services, health club , 60-foot swimming pool, steam room. Transportation 2 Ave Subway M31, and M72 to central park and the west side A perfect pied-a -terre, and investor, Pets are welcome.",
         bed: 3,
         bath: 4,
         area: "230 sq ft",
         owner: "Alice Adams",
+        contact: "3930 73 83 00",
 
     },
     {   
@@ -64,11 +67,12 @@ export const property =[
         address: "New York City, New York",
         name: "Brand New House",
         price: 800,
-        about: "Beutiful, updated, ground level co-op apartment with auto garage",
+        about: "Mesmerized by this sun-drenched well-maintained home that has it all and waiting for you. This prestigious white glove condo building is located on a cobblestone quiet Cul-de sac. This stunning luxury studio has it all full city and river views , W/D 24 hours doorman, concierge services, health club , 60-foot swimming pool, steam room. Transportation 2 Ave Subway M31, and M72 to central park and the west side A perfect pied-a -terre, and investor, Pets are welcome.",
         bed: 3,
         bath: 4,
         area: "230 sq ft",
         owner: "Alice Adams",
+        contact: "3930 73 83 00",
 
     },
     {   
@@ -77,11 +81,12 @@ export const property =[
         address: "New York City, New York",
         name: "Brand New House",
         price: 530,
-        about: "Beutiful, updated, ground level co-op apartment with auto garage",
+        about: "Mesmerized by this sun-drenched well-maintained home that has it all and waiting for you. This prestigious white glove condo building is located on a cobblestone quiet Cul-de sac. This stunning luxury studio has it all full city and river views , W/D 24 hours doorman, concierge services, health club , 60-foot swimming pool, steam room. Transportation 2 Ave Subway M31, and M72 to central park and the west side A perfect pied-a -terre, and investor, Pets are welcome.",
         bed: 3,
         bath: 4,
         area: "230 sq ft",
         owner: "Alice Adams",
+        contact: "3930 73 83 00",
 
     },
     {   
@@ -90,11 +95,12 @@ export const property =[
         address: "New York City, New York",
         name: "Brand New House",
         price: 550,
-        about: "Beutiful, updated, ground level co-op apartment with auto garage",
+        about: "Mesmerized by this sun-drenched well-maintained home that has it all and waiting for you. This prestigious white glove condo building is located on a cobblestone quiet Cul-de sac. This stunning luxury studio has it all full city and river views , W/D 24 hours doorman, concierge services, health club , 60-foot swimming pool, steam room. Transportation 2 Ave Subway M31, and M72 to central park and the west side A perfect pied-a -terre, and investor, Pets are welcome.",
         bed: 3,
         bath: 4,
         area: "230 sq ft",
         owner: "Alice Adams",
+        contact: "3930 73 83 00",
 
     },
     {   
@@ -103,11 +109,12 @@ export const property =[
         address: "New York City, New York",
         name: "Brand New House",
         price: 400,
-        about: "Beutiful, updated, ground level co-op apartment with auto garage",
+        about: "Mesmerized by this sun-drenched well-maintained home that has it all and waiting for you. This prestigious white glove condo building is located on a cobblestone quiet Cul-de sac. This stunning luxury studio has it all full city and river views , W/D 24 hours doorman, concierge services, health club , 60-foot swimming pool, steam room. Transportation 2 Ave Subway M31, and M72 to central park and the west side A perfect pied-a -terre, and investor, Pets are welcome.",
         bed: 3,
         bath: 4,
         area: "230 sq ft",
         owner: "Alice Adams",
+        contact: "3930 73 83 00",
 
     },
     {   
@@ -116,11 +123,12 @@ export const property =[
         address: "New York City, New York",
         name: "Brand New House",
         price: 600,
-        about: "Beutiful, updated, ground level co-op apartment with auto garage",
+        about: "Mesmerized by this sun-drenched well-maintained home that has it all and waiting for you. This prestigious white glove condo building is located on a cobblestone quiet Cul-de sac. This stunning luxury studio has it all full city and river views , W/D 24 hours doorman, concierge services, health club , 60-foot swimming pool, steam room. Transportation 2 Ave Subway M31, and M72 to central park and the west side A perfect pied-a -terre, and investor, Pets are welcome.",
         bed: 3,
         bath: 4,
         area: "230 sq ft",
         owner: "Alice Adams",
+        contact: "3930 73 83 00",
 
     },
     {   
@@ -129,11 +137,12 @@ export const property =[
         address: "New York City, New York",
         name: "Brand New House",
         price: 500,
-        about: "Beutiful, updated, ground level co-op apartment with auto garage",
+        about: "Mesmerized by this sun-drenched well-maintained home that has it all and waiting for you. This prestigious white glove condo building is located on a cobblestone quiet Cul-de sac. This stunning luxury studio has it all full city and river views , W/D 24 hours doorman, concierge services, health club , 60-foot swimming pool, steam room. Transportation 2 Ave Subway M31, and M72 to central park and the west side A perfect pied-a -terre, and investor, Pets are welcome.",
         bed: 3,
         bath: 4,
         area: "230 sq ft",
         owner: "Alice Adams",
+        contact: "3930 73 83 00",
 
     },
 
