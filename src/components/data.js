@@ -11,17 +11,21 @@ import client_image1 from "../assets/images/client-1.jpg";
 import client_image2 from "../assets/images/client- 2.jpg";
 import client_image3 from "../assets/images/client- 3.jpg";
 import client_image4 from "../assets/images/client- 4.jpg";
-
 import { MdNoteAlt } from "react-icons/md";
 import { FaHome, FaSearch, FaNotesMedical, FaCameraRetro } from "react-icons/fa";
 import { GoLaw } from "react-icons/go";
 
 
 
-export const property =[
-    {   
+export const property = [
+    {
         id: 1,
-        images: card_image1,
+        images: [
+            {img: card_image2},
+            {img: card_image3},
+            {img: card_image4},
+            {img: card_image1},
+        ],
         address: "New York City, New York",
         name: "Brand New House",
         price: 500,
@@ -33,9 +37,14 @@ export const property =[
         contact: "3930 73 83 00",
 
     },
-    {   
+    {
         id: 2,
-        images: card_image2,
+        images: [
+            {img: card_image2},
+            {img: card_image6},
+            {img: card_image7},
+            {img: card_image8},
+        ],
         address: "New York City, New York",
         name: "Brand New House",
         price: 650,
@@ -47,9 +56,14 @@ export const property =[
         contact: "3930 73 83 00",
 
     },
-    {   
+    {
         id: 3,
-        images: card_image3,
+        images: [
+            {img: card_image3},
+            {img: card_image6},
+            {img: card_image7},
+            {img: card_image8},
+        ],
         address: "New York City, New York",
         name: "Brand New House",
         price: 900,
@@ -61,9 +75,14 @@ export const property =[
         contact: "3930 73 83 00",
 
     },
-    {   
+    {
         id: 4,
-        images: card_image4,
+        images: [
+            {img: card_image4},
+            {img: card_image6},
+            {img: card_image7},
+            {img: card_image9},
+        ],
         address: "New York City, New York",
         name: "Brand New House",
         price: 800,
@@ -75,9 +94,14 @@ export const property =[
         contact: "3930 73 83 00",
 
     },
-    {   
+    {
         id: 5,
-        images: card_image5,
+        images: [
+            {img: card_image5},
+            {img: card_image6},
+            {img: card_image7},
+            {img: card_image8},
+        ],
         address: "New York City, New York",
         name: "Brand New House",
         price: 530,
@@ -89,9 +113,14 @@ export const property =[
         contact: "3930 73 83 00",
 
     },
-    {   
+    {
         id: 6,
-        images: card_image6,
+        images: [
+            {img: card_image6},
+            {img: card_image4},
+            {img: card_image7},
+            {img: card_image8},
+        ],
         address: "New York City, New York",
         name: "Brand New House",
         price: 550,
@@ -103,9 +132,14 @@ export const property =[
         contact: "3930 73 83 00",
 
     },
-    {   
+    {
         id: 7,
-        images: card_image7,
+        images: [
+            {img: card_image7},
+            {img: card_image6},
+            {img: card_image1},
+            {img: card_image8},
+        ],
         address: "New York City, New York",
         name: "Brand New House",
         price: 400,
@@ -117,9 +151,14 @@ export const property =[
         contact: "3930 73 83 00",
 
     },
-    {   
+    {
         id: 8,
-        images: card_image8,
+        images: [
+            {img: card_image8},
+            {img: card_image6},
+            {img: card_image7},
+            {img: card_image2},
+        ],
         address: "New York City, New York",
         name: "Brand New House",
         price: 600,
@@ -131,9 +170,14 @@ export const property =[
         contact: "3930 73 83 00",
 
     },
-    {   
+    {
         id: 9,
-        images: card_image9,
+        images: [
+            {img: card_image9},
+            {img: card_image6},
+            {img: card_image7},
+            {img: card_image8},
+        ],
         address: "New York City, New York",
         name: "Brand New House",
         price: 500,
@@ -230,6 +274,6 @@ export const reviews = [
         text: "Awesome Service",
         feedback: "This real estate service was very good and they provide good customer support."
     },
-    
+
 
 ]

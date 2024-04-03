@@ -1,15 +1,17 @@
+/* eslint-disable react/prop-types */
 import { FaMapMarkerAlt, FaCamera, FaVideo, FaBath, FaBed, FaThList, FaUserCircle, FaShareAlt, FaHeart, FaPlus } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
-const PropertyCards = ({card}) => {
-    
+
+const PropertyCards = ({ card }) => {
+
     const { images, address, name, price, about, bed, bath, area, owner } = card;
 
     return (
 
         <div className='shadow-xl'>
             <Link to={`/property/${card.id}`}>
-                <div className='h-[270px] bg-cover bg-center p-4 rounded-xl flex flex-col justify-between items-end ' style={{ backgroundImage: `url(${images})` }}>
+                <div className='h-[270px] bg-cover bg-center p-4 rounded-xl flex flex-col justify-between items-end' style={{ backgroundImage: `url(${images[0].img})` }}>
                     <div className='w-full flex justify-between items-center'>
                         <div>
                             <button className='bg-red-600 px-3 py-1 rounded-full text-white text-[13px] hover:bg-white hover:text-black transition duration-300 ease-in-out'>Featured</button>

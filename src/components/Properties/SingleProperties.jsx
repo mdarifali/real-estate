@@ -4,6 +4,7 @@ import { useParams } from 'react-router-dom';
 import SubHeader from './../Header/SubHeader';
 import googleMap2 from '../../assets/images/Google Map2.jpg';
 import LatestProperties from './../Home/LatestProperties';
+import { useState } from "react";
 
 const SingleProperties = () => {
 
@@ -12,17 +13,29 @@ const SingleProperties = () => {
     const items = AllPropertys.find(data => data.id == id)
     const { images, address, contact, name, price, about, bed, bath, area, owner } = items;
 
+    const [chnageImg, setChangeImg] = useState(images[0].img);
+
     return (
         <>  <SubHeader />
-            <div className='container mx-auto w-[85%] sm:w-3/4 py-20 md:w-[95%] flex flex-col gap-10'>
+            <div className='container mx-auto w-[85%] sm:w-3/4 py-20 flex flex-col gap-10'>
                 <div className='grid grid-cols-1 sm:grid-cols-2 justify-center items-center gap-5'>
-                    <img src={images} alt="" />
+                    <img src={chnageImg} alt="" />
                     <div className='grid grid-cols-4 sm:grid-cols-2 justify-center items-center gap-3 p-0 sm:p-3'>
-                        <img src={images} alt="" />
-                        <img src={images} alt="" />
-                        <img src={images} alt="" />
-                        <img src={images} alt="" />
+
+                        {
+                            images.map((img, index) => {
+                                return (
+
+                                    <img key={index}
+                                        onClick={() => setChangeImg(img.img)}
+                                        className="cursor-pointer hover:brightness-50 transition-all"
+                                        src={img.img}
+                                        alt="image" />
+                                )
+                            })
+                        }
                     </div>
+
                 </div>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-10">

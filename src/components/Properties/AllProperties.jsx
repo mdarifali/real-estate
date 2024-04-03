@@ -12,7 +12,7 @@ const AllProperties = () => {
                     {
                         property.map((card) => {
                             return (
-                                <PropertyCards key={card.id} card={card} />
+                                <PropertyCards key={card.id} card={card}/>
                             )
                         })
                     }
