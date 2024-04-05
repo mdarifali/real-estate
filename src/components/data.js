@@ -21,7 +21,7 @@ export const property = [
     {
         id: 1,
         images: [
-            {img: card_image2},
+            {img: card_image1},
             {img: card_image3},
             {img: card_image4},
             {img: card_image1},

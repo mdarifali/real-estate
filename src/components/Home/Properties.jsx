@@ -17,7 +17,7 @@ const Properties = () => {
                             return (
                                 <div key={card.id} className='shadow-xl'>
                                     <Link to={`/property/${card.id}`}>
-                                        <div className='h-[270px] bg-cover bg-center p-4 rounded-xl flex flex-col justify-between items-end ' style={{ backgroundImage: `url(${card.images})` }}>
+                                        <div className='h-[270px] bg-cover bg-center p-4 rounded-xl flex flex-col justify-between items-end ' style={{ backgroundImage: `url(${card.images[0].img})` }}>
                                             <div className='w-full flex justify-between items-center'>
                                                 <div>
                                                     <button className='bg-red-600 px-3 py-1 rounded-full text-white text-[13px] hover:bg-white hover:text-black transition duration-300 ease-in-out'>Featured</button>
