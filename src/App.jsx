@@ -7,6 +7,8 @@ import Contact from "./components/Contact/Contact";
 import Services from "./components/Services/Services";
 import NotFound from "./components/Not Found/NotFound";
 import SingleProperties from "./components/Properties/SingleProperties";
+import Login from "./components/Login/Login";
+import Register from "./components/Login/Register";
 
 
 function App() {
@@ -20,6 +22,8 @@ function App() {
         <Route path="/services"  element={ <Services /> }/>
         <Route path="/about"  element={ <About /> }/>
         <Route path="/contact"  element={ <Contact /> }/>
+        <Route path="/login"  element={ <Login /> }/>
+        <Route path="/register"  element={ <Register /> }/>
         <Route path="*"  element={ <NotFound/> }/>
       </Routes>
       <Footer />

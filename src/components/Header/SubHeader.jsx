@@ -79,10 +79,12 @@ const SubHeader = () => {
                                 </div>
                             </div>
                             <div>
-                                <Link to="#" className="hidden sm:block md:hidden lg:block text-black hover:text-red-400 transition uppercase font-normal tracking-wider">Login</Link>
-                                <div className="sm:hidden md:block lg:hidden p-2 border border-black cursor-pointer">
-                                    <FaUserCircle className="text-black hover:text-red-400 transition-all size-7" />
-                                </div>
+                                <Link to="/login" className="hidden sm:block md:hidden lg:block text-black hover:text-red-400 transition uppercase font-normal tracking-wider">Login</Link>
+                                <Link to="/login">
+                                    <div className="sm:hidden md:block lg:hidden p-2 border border-black cursor-pointer">
+                                        <FaUserCircle className="text-black hover:text-red-400 transition-all size-7" />
+                                    </div>
+                                </Link>
                             </div>
                         </div>
                     </div>
