@@ -20,7 +20,7 @@ const Login = () => {
                                 <label className='text-gray-600' htmlFor="remember">Remember Me</label>
                             </div>
                             <button className='w-full text-md font-semibold py-4 my-10 bg-red-600 text-white hover:bg-black transition uppercase'>Login</button>
-                            <div className='flex justify-between items-center'>
+                            <div className='flex flex-col sm:flex-row justify-between items-center'>
                                 <Link to="#">
                                     <p className='text-gray-600 font-semibold hover:text-black hover:border-b border-red-600'>Reset Password</p>
                                 </Link>
