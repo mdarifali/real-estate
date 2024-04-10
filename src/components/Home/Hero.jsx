@@ -1,14 +1,17 @@
+import { Link } from 'react-router-dom';
 import banner from '../../assets/images/Hero-banner.jpg';
 
 const Hero = () => {
     return (
         <div id='hero' className='max-h-fit pt-40 pb-10 mb-0 sm:mb-36 bg-cover bg-center bg-fixed bg-no-repeat' style={{ backgroundImage: `url(${banner})` }}>
-            <div className="container mx-auto w-[85%] sm:w-3/4 md:w-[95%] pt-0 sm:pt-20 pb-14">
+            <div className="container mx-auto w-[85%] sm:w-3/4 pt-0 sm:pt-20 pb-14">
                 <div className='text-white flex flex-col sm:flex-row items-center gap-12'>
                     <div className='w-full flex-1'>
                         <h1 className='tracking-wider text-4xl sm:text-6xl font-bold sm:font-extrabold mb-10'>Find your next home in Las Vegas</h1>
                         <p className='text-md sm:text-xl'>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corporis, a! Assumenda magni fuga molestiae commodi?</p>
-                        <button className='px-10 py-4 tracking-wider bg-red-600 text-white mt-10 uppercase hover:bg-black transition-all'>See More</button>
+                        <Link to="/propertis">
+                            <button className='px-10 py-4 tracking-wider bg-red-600 text-white mt-10 uppercase hover:bg-black transition-all'>See More</button>
+                        </Link>
                     </div>
                     <div className='w-full flex-1 bg-white rounded-xl'>
                         <div className='flex flex-col gap-6 p-12'>

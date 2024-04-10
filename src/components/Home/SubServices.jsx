@@ -3,7 +3,7 @@ import { services } from "../data.js";
 const SubServices = () => {
     return (
         <div className="bg-[#d9edbf9d]">
-            <div className="container mx-auto w-[85%] sm:w-3/4 md:w-[95%] py-20">
+            <div className="container mx-auto w-[85%] sm:w-3/4 py-20">
                 <div className='mb-10'>
                     <h5 className='tracking-wider text-[20px] mb-5 text-red-500'>OUR SERVICES</h5>
                     <h2 className='tracking-wide text-3xl sm:text-4xl font-bold'>Top Real Estate Services</h2>

@@ -8,22 +8,26 @@ import SubAbout from "./SubAbout";
 import SubServices from "./SubServices";
 import Properties from "./Properties";
 import LatestProperties from "./LatestProperties";
+import PageTitle from "../PageTitle";
 
 
 const Home = () => {
     return (
-        <div className="relative">
-            <Header />
-            <Hero />
-            <SubAbout />
-            <PopularArea />
-            <Properties />
-            <SubServices />
-            <Testimonials />
-            <SubContact />
-            <LatestProperties />
-            <ScrollTop />
-        </div>
+
+        <>  <PageTitle title="Real Estate | Home" />
+            <div className="relative">
+                <Header />
+                <Hero />
+                <SubAbout />
+                <PopularArea />
+                <Properties />
+                <SubServices />
+                <Testimonials />
+                <SubContact />
+                <LatestProperties />
+                <ScrollTop />
+            </div>
+        </>
     );
 };
 

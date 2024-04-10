@@ -1,10 +1,12 @@
 import about from '../../assets/images/about-image.jpg';
 import SubHeader from './../Header/SubHeader';
+import PageTitle from './../PageTitle';
 
 const About = () => {
     return (
         <>  <SubHeader />
-            <div className="container mx-auto w-[85%] sm:w-3/4 md:w-[95%] my-20">
+            <PageTitle title="Real Estate | About Us" />
+            <div className="container mx-auto w-[85%] sm:w-3/4 my-20">
                 <div className='flex flex-col sm:flex-row items-center gap-5'>
                     <div className='flex-1 order-1 sm:order-1 mb-8 sm:mb-0'>
                         <img className='rounded-3xl w-full sm:w-10/12' src={about} alt="banner" />

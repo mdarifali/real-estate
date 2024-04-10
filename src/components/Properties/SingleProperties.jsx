@@ -17,7 +17,7 @@ const SingleProperties = () => {
 
     return (
         <>  <SubHeader />
-            <div className='container mx-auto w-[85%] sm:w-[100%] py-20 flex flex-col gap-10'>
+            <div className='container mx-auto w-[85%] sm:w-3/4 py-20 flex flex-col gap-10'>
                 <div className='grid grid-cols-1 sm:grid-cols-2 justify-center gap-5'>
                     <img className="w-full" src={chnageImg} alt="" />
                     <div className='grid grid-cols-4 sm:grid-cols-2 justify-center items-center gap-3'>

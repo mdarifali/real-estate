@@ -5,7 +5,7 @@ import pImage3 from '../../assets/images/popular image -3.jpg';
 const PopularArea = () => {
     return (
         <div className='bg-[#d9edbf9d]'>
-            <div className="container mx-auto w-[85%] sm:w-3/4 md:w-[95%] py-20">
+            <div className="container mx-auto w-[85%] sm:w-3/4 py-20">
                 <div className="w-full grid-cols-1 grid sm:grid-cols-3 gap-5">
                     <div className='mb-5'>
                         <h5 className='tracking-wide text-xl mb-6 text-red-500'>POPULAR AREAS</h5>

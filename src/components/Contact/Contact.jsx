@@ -1,11 +1,13 @@
 import mapImage from '../../assets/images/Google Map.jpg';
 import SubHeader from './../Header/SubHeader';
+import PageTitle from './../PageTitle';
 
 const Contact = () => {
     return (
         <>  <SubHeader /> 
+            <PageTitle title="Real Estate | Contact Us" />
             <div className="">
-                <div className="container mx-auto w-[85%] sm:w-3/4 md:w-[95%] py-20">
+                <div className="container mx-auto w-[85%] sm:w-3/4 py-20">
                     <div className='mb-10'>
                         <h5 className='tracking-wider text-[20px] mb-5 text-red-500'>CONTACT US</h5>
                         <h2 className='tracking-wide text-3xl sm:text-4xl font-bold'>Send Message</h2>

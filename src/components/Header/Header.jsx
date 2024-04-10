@@ -12,7 +12,7 @@ const Header = () => {
 
     return (
         <nav className="w-full absolute z-50">
-            <div className="container mx-auto w-[95%] sm:w-3/4 md:w-[95%]">
+            <div className="container mx-auto w-[95%] sm:w-3/4">
                 <div className="relative flex items-center justify-between">
                     <div
                         onClick={() => setIsOpen(!isOpen)}
@@ -70,11 +70,13 @@ const Header = () => {
                                 </div>
                             </div>
 
-                            <div>
-                                <div className="hidden lg:flex md:flex items-center justify-center px-3 gap-2 p-2 border rounded-full hover:bg-red-500 hover:border-red-500 transition-all">
-                                    <FaUserCircle className="text-white size-4 sm:size-4" />
-                                    <Link to="/login" className=" text-white uppercase text-sm sm:text-base tracking-wider">Login</Link>
-                                </div>
+                            <div className="cursor-pointer">
+                                <Link to="/login">
+                                    <div className="hidden lg:flex md:flex items-center justify-center px-3 gap-2 p-2 border rounded-full hover:bg-red-500 hover:border-red-500 transition-all">
+                                        <FaUserCircle className="text-white size-4 sm:size-4" />
+                                        <span className=" text-white uppercase text-sm sm:text-base tracking-wider">Login</span>
+                                    </div>
+                                </Link>
 
                                 <Link to="/login">
                                     <div className="sm:hidden p-2 cursor-pointer border rounded-full hover:bg-red-500 hover:border-red-500 transition-all">
@@ -98,8 +100,8 @@ const Header = () => {
                     <Link to="/contact" className="text-white hover:bg-red-500 hover:scale-110 transition-all block px-3 py-2 text-base uppercase font-normal">Contact</Link>
                 </div>
             </div>
-            {/* mobile menu items end*/}        
-                
+            {/* mobile menu items end*/}
+
             {/* favorites offcanvas section start*/}
             {/* <div className={`${!favOpen && "-translate-x-full"} bg-white fixed top-0 right-[-0] sm:right-[-400px] z-40 h-screen w-full sm:w-[400px] p-4 transition-all delay-150 duration-200`}>
                 <div className="p-2 flex justify-end">
