@@ -3,12 +3,12 @@ import logo from "../../assets/images/Logo.png";
 import image1 from "../../assets/images/card image1.jpg";
 import image2 from "../../assets/images/card image1.jpg";
 import { FaHeart, FaUserCircle } from "react-icons/fa";
+import { MdClose } from "react-icons/md";
 import { useState } from "react";
 
 const SubHeader = () => {
 
     const [isOpen, setIsOpen] = useState(false);
-    const [favOpen, setFavOpen] = useState(false);
 
     return (
         <nav className="w-full bg-slate-700 shadow-md">
@@ -22,17 +22,15 @@ const SubHeader = () => {
                         {
                             isOpen ?
 
-                                <button type="button" className="relative inline-flex items-center justify-center p-2 border rounded-full text-white hover:bg-red-500 hover:border-red-500 transition-all focus:outline-none">
-                                    <svg className="h-6 w-6 sm:h-7 sm:w-7" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor">
-                                        <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-                                    </svg>
-                                </button>
-
-                                :
-
                                 <button type="button" className="relative inline-flex items-center justify-center p-2 border  rounded-full text-white hover:bg-red-500 hover:border-red-500 transition-all focus:outline-none">
                                     <svg className="h-6 w-6 sm:h-7 sm:w-7" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor">
                                         <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+                                    </svg>
+                                </button>
+                                :
+                                <button type="button" className="relative inline-flex items-center justify-center p-2 border rounded-full text-white hover:bg-red-500 hover:border-red-500 transition-all focus:outline-none">
+                                    <svg className="h-6 w-6 sm:h-7 sm:w-7" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor">
+                                        <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
                                     </svg>
                                 </button>
 
@@ -59,17 +57,47 @@ const SubHeader = () => {
                             </div>
                         </div>
                         <div className="absolute right-[55px] sm:right-0 md:right-[67px] lg:right-0 sm:relative md:absolute lg:relative flex justify-between items-center gap-3">
-                            <div className="cursor-pointer" onClick={() => { setFavOpen(!favOpen) }}  >
-                                <div className="hidden lg:flex md:flex items-center justify-center px-3 gap-2 p-2 border rounded-full hover:bg-red-500 hover:border-red-500 transition-all">
+                            {/* favorites dropdown menu start*/}
+                            <div className="dropdown dropdown-bottom" >
+                                <div className="hidden lg:flex md:flex items-center justify-center px-3 gap-2 p-2 border rounded-full hover:bg-red-500 hover:border-red-500 transition-all" tabIndex={0} role="button">
                                     <FaHeart className="text-white size-4 sm:size-4" />
                                     <span className="text-white uppercase text-sm sm:text-base tracking-wider">Favorites</span>
                                 </div>
 
-                                <div className="sm:hidden p-2 cursor-pointer border rounded-full hover:bg-red-500 hover:border-red-500 transition-all">
+                                <div className="sm:hidden p-2 cursor-pointer border rounded-full hover:bg-red-500 hover:border-red-500 transition-all" tabIndex={0} role="button">
                                     <FaHeart className="text-white size-6" />
                                 </div>
+                                <div tabIndex={0} className="dropdown-content z-[1] card rounded-none border card-compact w-[400px] p-2 mt-6 shadow-xl bg-white left-[-240px]">
+                                    <div className="card-body">
+                                        <div className="p-4">
+                                            <div className="flex flex-col justify-center item-start gap-5 my-5">
+                                                <h3 className="text-xl text-center text-black mb-5">Favorites Property </h3>
+                                                <div className="flex bg-white justify-start items-center gap-5 p-5 hover:shadow-2xl transition-all rounded-sm">
+                                                    <img src={image1} className="w-[90px] rounded-lg" alt="image" />
+                                                    <div>
+                                                        <h2 className="text-sm mb-2">Brand New House</h2>
+                                                        <p className="font-medium">$ 400.00</p>
+                                                    </div>
+                                                    <div className="tooltip tooltip-right tooltip-error" data-tip="Delete">
+                                                        <button><MdClose className="text-2xl hover:text-red-600" /></button>
+                                                    </div>
+                                                </div>
+                                                <div className="flex bg-white justify-start items-center gap-5 p-5 hover:shadow-2xl transition-all rounded-sm">
+                                                    <img src={image2} className="w-[90px] rounded-lg" alt="image" />
+                                                    <div>
+                                                        <h2 className="text-sm ">Brand New House</h2>
+                                                        <p className="font-medium">$ 400.00</p>
+                                                    </div>
+                                                    <div className="tooltip tooltip-right tooltip-error" data-tip="Delete">
+                                                        <button><MdClose className="text-2xl hover:text-red-600" /></button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-
+                            {/* favorites dropdown menu end*/}
                             <div className="cursor-pointer">
                                 <Link to="/login">
                                     <div className="hidden lg:flex md:flex items-center justify-center px-3 gap-2 p-2 border rounded-full hover:bg-red-500 hover:border-red-500 transition-all">
@@ -91,9 +119,9 @@ const SubHeader = () => {
 
             {/* mobile menu items start */}
             <div
-                className={`${isOpen ? 'lg:translate-x-full' : 'lg:-translate-x-full'} ${isOpen && '-translate-x-full'} ${isOpen && 'md:-translate-x-full'} left-0 fixed z-50 h-screen w-full bg-black transition-all delay-150 duration-200`}>
+                className={`${!isOpen ? 'hidden' : 'block'} absolute z-10 w-full bg-black transition-all delay-150 duration-200`}>
                 <div className="space-y-1 px-2 pb-8 pt-8 text-center">
-                    <Link to="#" className="text-white hover:bg-red-500 hover:scale-110 transition-all block px-3 py-2 text-base uppercase font-normal">Home</Link>
+                    <Link to="/" className="text-white hover:bg-red-500 hover:scale-110 transition-all block px-3 py-2 text-base uppercase font-normal">Home</Link>
                     <Link to="/propertis" className="text-white hover:bg-red-500 hover:scale-110 transition-all block px-3 py-2 text-base uppercase font-normal">Properties</Link>
                     <Link to="/services" className="text-white hover:bg-red-500 hover:scale-110 uppercase transition-all block px-3 py-2 text-base font-normal">Services</Link>
                     <Link to="/about" className="text-white hover:bg-red-500 hover:scale-110 transition-all block uppercase px-3 py-2 text-base font-normal">About</Link>
@@ -101,37 +129,6 @@ const SubHeader = () => {
                 </div>
             </div>
             {/* mobile menu items end*/}
-            {/* favorites offcanvas section start*/}
-            {/* <div className={`${!favOpen && "-translate-x-full"} bg-white fixed top-0 right-[-0] sm:right-[-400px] z-40 h-screen w-full sm:w-[400px] p-4 transition-all delay-150 duration-200`}>
-                <div className="p-2 flex justify-end">
-                    <button onClick={() => { setFavOpen(!favOpen) }} type="button" className="text-black transition focus:outline-none">
-                        <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor">
-                            <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
-                        </svg>
-                    </button>
-                </div>
-
-                <div className="p-4">
-                    <div className="flex flex-col justify-center item-start gap-5 my-10">
-                        <h3 className="text-xl font-semibold mb-5">Favorites Property </h3>
-                        <div className="flex justify-start items-center gap-5 shadow-sm p-5 hover:shadow-2xl transition">
-                            <img src={image1} className="w-[90px] rounded-lg" alt="image" />
-                            <div>
-                                <h2 className="text-sm mb-2">Brand New House</h2>
-                                <p className="font-medium">$ 400.00</p>
-                            </div>
-                        </div>
-                        <div className="flex justify-start items-center gap-5 shadow-sm p-5 hover:shadow-2xl transition">
-                            <img src={image2} className="w-[90px] rounded-lg" alt="image" />
-                            <div>
-                                <h2 className="text-sm ">Brand New House</h2>
-                                <p className="font-medium">$ 400.00</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div> */}
-            {/* favorites offcanvas section end*/}
         </nav>
     );
 };
