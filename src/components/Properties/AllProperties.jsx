@@ -8,13 +8,16 @@ const AllProperties = () => {
     return (
         <>  <SubHeader />
             <PageTitle title="Real Estate | All Properties" />
+            <div className='h-[150px] sm:h-[250px] bg-slate-700 flex justify-center items-center'>
+                <h5 className='tracking-wider text-xl sm:text-3xl text-white font-bold'>OUR PROPERTIES</h5>
+            </div>
             <div className="container mx-auto w-[85%] sm:w-3/4 py-20">
-                <h2 className='tracking-wider text-3xl sm:text-4xl font-bold text-center mb-20'>Explore The Best <span className=" text-red-600 uppercase">Property</span></h2>
+                <h2 className='tracking-wider text-3xl sm:text-4xl font-bold text-center mb-20 text-black'>Explore The Best <span className=" text-red-600 uppercase">Property</span></h2>
                 <div className="w-full grid-cols-1 grid sm:grid-cols-3 justify-center items-center gap-8">
                     {
                         property.map((card) => {
                             return (
-                                <PropertyCards key={card.id} card={card}/>
+                                <PropertyCards key={card.id} card={card} />
                             )
                         })
                     }

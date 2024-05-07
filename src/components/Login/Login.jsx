@@ -8,15 +8,23 @@ const Login = () => {
     return (
         <>  <SubHeader />
             <PageTitle title="Real Estate | User Login" />
-            <div>
+            <div className='bg-slate-700'>
                 <div className="container mx-auto w-[85%] sm:w-3/4 py-20">
                     <div className="flex justify-center items-center">
                         <form className='max-w-[500px] bg-slate-200 py-10 sm:py-16 px-10'>
                             <div className="flex justify-center mb-14">
                                 <img className="w-[110px]" src={logo} alt="" />
                             </div>
-                            <input className="w-[100%] border-2 border-gray-200 rounded-sm p-3 outline-none mb-5" type="email" placeholder="Your Email" required />
-                            <input className="w-[100%] border-2 border-gray-200 rounded-sm p-3 outline-none mb-5" type="password" placeholder="Enter Password" required />
+                            <input 
+                                className="w-[100%] border-2 border-gray-200 rounded-sm p-3 mb-5 bg-white text-black" 
+                                type="email" 
+                                placeholder="Your Email" 
+                                required />
+                            <input 
+                                className="w-[100%] border-2 border-gray-200 rounded-sm p-3 mb-5 bg-white text-black" 
+                                type="password" 
+                                placeholder="Enter Password" 
+                                required />
                             <div className='flex gap-1 items-center justify-start'>
                                 <input type="checkbox" id="remember" />
                                 <label className='text-gray-600' htmlFor="remember">Remember Me</label>

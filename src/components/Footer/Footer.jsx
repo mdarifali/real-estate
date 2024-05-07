@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 
 const Footer = () => {
     return (
-        <div className="border-t-2">
+        <div className="border-t-2 bg-white text-black">
             <footer className="container mx-auto w-[85%] sm:w-3/4 py-16 ">
                 <div className="w-full grid grid-cols-1 sm:grid-cols-3 justify-center items-center gap-10">
                     <div className="flex flex-col justify-center item-start gap-5">
@@ -52,7 +52,7 @@ const Footer = () => {
                             <div className="p-2 border-2 border-red-600  rounded-full">
                                 <FaPhoneAlt className="text-black hover:text-red-500 size-4" />
                             </div>
-                            <p className="text-slate-600">623.392.4959</p>
+                            <p className="text-slate-600">623-392-4959</p>
                         </div>
                     </div>
                     <div className="flex flex-col justify-center item-start gap-5">

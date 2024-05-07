@@ -15,7 +15,7 @@ const Home = () => {
     return (
 
         <>  <PageTitle title="Real Estate | Home" />
-            <div className="relative">
+            <div className="relative bg-white text-black">
                 <Header />
                 <Hero />
                 <SubAbout />
