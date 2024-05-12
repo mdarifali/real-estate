@@ -15,19 +15,21 @@ const Login = () => {
                             <div className="flex justify-center mb-14">
                                 <img className="w-[110px]" src={logo} alt="" />
                             </div>
-                            <input 
-                                className="w-[100%] border-2 border-gray-200 rounded-sm p-3 mb-5 bg-white text-black" 
-                                type="email" 
-                                placeholder="Your Email" 
+                            <input
+                                className="w-[100%] border-2 border-gray-200 rounded-sm p-3 mb-5 bg-white text-black"
+                                type="email"
+                                placeholder="Your Email"
                                 required />
-                            <input 
-                                className="w-[100%] border-2 border-gray-200 rounded-sm p-3 mb-5 bg-white text-black" 
-                                type="password" 
-                                placeholder="Enter Password" 
+                            <input
+                                className="w-[100%] border-2 border-gray-200 rounded-sm p-3 mb-5 bg-white text-black"
+                                type="password"
+                                placeholder="Enter Password"
                                 required />
-                            <div className='flex gap-1 items-center justify-start'>
-                                <input type="checkbox" id="remember" />
-                                <label className='text-gray-600' htmlFor="remember">Remember Me</label>
+                            <div className="form-control">
+                                <label className="label cursor-pointer">
+                                    <span className="label-text text-gray-600 text-[16px]">Remember Me</span>
+                                    <input type="checkbox" defaultChecked className="checkbox checkbox-error rounded-full" />
+                                </label>
                             </div>
                             <button className='w-full text-md font-semibold py-4 my-10 bg-red-600 text-white hover:bg-black transition uppercase'>Login</button>
                             <div className='flex flex-col sm:flex-row justify-between items-center gap-5'>
@@ -38,7 +40,7 @@ const Login = () => {
                                 </Link>
                                 <Link to="/register">
                                     <div className=''>
-                                        <p className='text-gray-500 hover:text-red-400'>don't have an account?</p>
+                                        <p className='text-gray-500 hover:text-red-400 border-gray-500 border-b'>don't have an account?</p>
                                     </div>
                                 </Link>
                             </div>
