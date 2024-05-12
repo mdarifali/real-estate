@@ -5,10 +5,20 @@ import image2 from "../../assets/images/card image1.jpg";
 import { FaHeart, FaUserCircle } from "react-icons/fa";
 import { MdClose } from "react-icons/md";
 import { useState } from "react";
+import { useAuthState } from "react-firebase-hooks/auth";
+import auth from "../../firebaseAuthToken";
+import { signOut } from "firebase/auth";
 
 const Header = () => {
 
     const [isOpen, setIsOpen] = useState(false);
+
+    const [user] = useAuthState(auth);
+
+    const logout = () => {
+        signOut(auth);
+        // localStorage.removeItem('accessToken');
+    };
 
     return (
         <nav className="w-full absolute z-50">
@@ -60,14 +70,25 @@ const Header = () => {
                         <div className="absolute right-[55px] sm:right-0 md:right-[67px] lg:right-0 sm:relative md:absolute lg:relative flex justify-between items-center gap-3">
                             {/* favorites dropdown menu start*/}
                             <div className="dropdown dropdown-bottom" >
-                                <div className="hidden lg:flex md:flex items-center justify-center px-3 gap-2 p-2 border rounded-full hover:bg-red-500 hover:border-red-500 transition-all" tabIndex={0} role="button">
-                                    <FaHeart className="text-white size-4 sm:size-4" />
-                                    <span className="text-white uppercase text-sm sm:text-base tracking-wider">Favorites</span>
-                                </div>
+                                {
+                                    user ?
 
-                                <div className="sm:hidden p-2 cursor-pointer border rounded-full hover:bg-red-500 hover:border-red-500 transition-all" tabIndex={0} role="button">
-                                    <FaHeart className="text-white size-6" />
-                                </div>
+                                        <div className="p-2 border rounded-full hover:bg-red-500 hover:border-red-500 transition-all" tabIndex={0} role="button">
+                                            <FaHeart className="text-white size-6" />
+                                        </div>
+
+                                        :
+
+                                        <>
+                                            <div className="hidden lg:flex md:flex items-center justify-center px-3 gap-2 p-2 border rounded-full hover:bg-red-500 hover:border-red-500 transition-all" tabIndex={0} role="button">
+                                                <FaHeart className="text-white size-4" />
+                                                <span className="text-white uppercase text-base tracking-wider mb-1">Favorites</span>
+                                            </div>
+                                            <div className="sm:hidden p-2 cursor-pointer border rounded-full hover:bg-red-500 hover:border-red-500 transition-all" tabIndex={0} role="button">
+                                                <FaHeart className="text-white size-6" />
+                                            </div>
+                                        </>
+                                }
                                 <div tabIndex={0} className="dropdown-content z-[1] card rounded-none border card-compact w-[400px] p-2 mt-5 shadow bg-white left-[-240px]">
                                     <div className="card-body">
                                         <div className="p-4">
@@ -102,18 +123,46 @@ const Header = () => {
                             {/* favorites dropdown menu end*/}
 
                             <div className="cursor-pointer">
-                                <Link to="/login">
-                                    <div className="hidden lg:flex md:flex items-center justify-center px-3 gap-2 p-2 border rounded-full hover:bg-red-500 hover:border-red-500 transition-all">
-                                        <FaUserCircle className="text-white size-4 sm:size-4" />
-                                        <span className=" text-white uppercase text-sm sm:text-base tracking-wider">Login</span>
-                                    </div>
-                                </Link>
 
-                                <Link to="/login">
-                                    <div className="sm:hidden p-2 cursor-pointer border rounded-full hover:bg-red-500 hover:border-red-500 transition-all">
-                                        <FaUserCircle className="text-white size-6" />
-                                    </div>
-                                </Link>
+
+                                {
+                                    user ?
+                                        <div className="dropdown dropdown-end">
+                                            <div tabIndex={0} role="button">
+                                                <div className="p-2 mt-1 border rounded-full hover:bg-red-500 hover:border-red-500 transition-all">
+                                                    <FaUserCircle className="text-white size-6" />
+                                                </div>
+                                            </div>
+                                            <ul tabIndex={0} className="menu menu-sm dropdown-content mt-5 z-[1] p-5 shadow bg-white w-52">
+                                                <li>
+                                                    <a className="justify-between">
+                                                        Profile
+                                                        <span className="badge">New</span>
+                                                    </a>
+                                                </li>
+                                                <li><Link to='/admin'>Admin</Link></li>
+                                                <li onClick={logout}><a>Logout</a></li>
+                                            </ul>
+                                        </div>
+
+                                        :
+
+                                        <>
+                                            <Link to="/login">
+                                                <div className="hidden lg:flex md:flex items-center justify-center px-3 gap-2 p-2 border rounded-full hover:bg-red-500 hover:border-red-500 transition-all">
+                                                    <FaUserCircle className="text-white size-4" />
+                                                    <span className=" text-white uppercase text-base tracking-wider mb-1">Login</span>
+                                                </div>
+                                            </Link>
+                                            <Link to="/login">
+                                                <div className="sm:hidden p-2 cursor-pointer border rounded-full hover:bg-red-500 hover:border-red-500 transition-all">
+                                                    <FaUserCircle className="text-white size-6" />
+                                                </div>
+                                            </Link>
+                                        </>
+                                }
+
+
                             </div>
                         </div>
                     </div>

@@ -2,6 +2,8 @@
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { auth } from './../../firebaseAuthToken';
 import { Navigate, useLocation } from 'react-router-dom';
+import Loading from '../Loading';
+import Swal from 'sweetalert2';
 
 const PrivateRoute = ({children}) => {
 
@@ -9,19 +11,15 @@ const PrivateRoute = ({children}) => {
     const location = useLocation();
 
     if (loading) {
-        return (
-          <div>
-            <p>Loading ...</p>
-          </div>
-        );
+        return <Loading />
       }
 
       if (error) {
-        return (
-          <div>
-            <p>Error: {error}</p>
-          </div>
-        );
+        Swal.fire({
+          title: "Oops...",
+          text: (error),
+          icon: "error"
+        });
       }
 
       if (user) {

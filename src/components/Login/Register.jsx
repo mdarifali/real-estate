@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import SubHeader from "../Header/SubHeader";
 import logo from "../../assets/images/Logo.png";
 import PageTitle from './../PageTitle';
-import { toast } from 'react-toastify';
 import { auth } from './../../firebaseAuthToken';
 import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { useForm } from "react-hook-form";
@@ -26,7 +25,7 @@ const Register = () => {
             title: "Oops...",
             text: (error?.message),
             icon: "error"
-          });
+        });
     }
 
     if (loading) {
@@ -41,8 +40,8 @@ const Register = () => {
         });
     }
 
-    const handleSingup = async data => {
-        await createUserWithEmailAndPassword(data.email, data.password);
+    const handleSingup = async event => {
+        await createUserWithEmailAndPassword(event.email, event.password);
         // await updateProfile({ displayName: data.name });
 
     }
@@ -60,6 +59,11 @@ const Register = () => {
                             <div className="flex justify-center mb-14">
                                 <img className="w-[110px]" src={logo} alt="" />
                             </div>
+
+
+                            <label>
+                                {errors.name?.type === 'required' && <span className="label-text-alt text-red-500">{errors.name.message}</span>}
+                            </label>
                             <input
                                 className="w-[100%] p-3 mb-5 bg-white text-black"
                                 type="text"
@@ -71,10 +75,12 @@ const Register = () => {
                                     }
                                 })}
                             />
-                            <label className='my-3'>
-                                {errors.name?.type === 'required' && <span className="label-text-altfont-bold text-red-500">{errors.name.message}</span>}
-                            </label>
 
+
+                            <label>
+                                {errors.email?.type === 'required' && <span className="label-text-alt text-red-500">{errors.email.message}</span>}
+                                {errors.email?.type === 'pattern' && <span className="label-text-alt text-red-500">{errors.email.message}</span>}
+                            </label>
                             <input
                                 className="w-[100%] p-3 mb-5 bg-white text-black"
                                 type="email"
@@ -90,13 +96,14 @@ const Register = () => {
                                     }
                                 })}
                             />
-                            <label className='my-3'>
-                                {errors.email?.type === 'required' && <span className="label-text-altfont-bold text-red-500">{errors.email.message}</span>}
-                                {errors.email?.type === 'pattern' && <span className="label-text-alt font-bold text-red-500">{errors.email.message}</span>}
-                            </label>
 
+
+                            <label>
+                                {errors.password?.type === 'required' && <span className="label-text-alt text-red-500">{errors.password.message}</span>}
+                                {errors.password?.type === 'pattern' && <span className="label-text-alt text-red-500">{errors.password.message}</span>}
+                            </label>
                             <input
-                                className="w-[100%] p-3 mb-5 bg-white text-black"
+                                className="w-[100%] p-3 bg-white text-black"
                                 type="password"
                                 placeholder="Password"
                                 {...register("password", {
@@ -110,10 +117,6 @@ const Register = () => {
                                     }
                                 })}
                             />
-                            <label className='my-3'>
-                                {errors.password?.type === 'required' && <span className="label-text-alt font-bold text-red-500">{errors.password.message}</span>}
-                                {errors.password?.type === 'pattern' && <span className="label-text-alt font-bold text-red-500">{errors.password.message}</span>}
-                            </label>
 
                             <button className='w-full text-md font-semibold py-4 my-10 bg-red-600 text-white hover:bg-black transition uppercase'>Submit</button>
                             <div className='flex justify-center'>

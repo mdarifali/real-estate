@@ -1,30 +1,96 @@
 /* eslint-disable react/no-unescaped-entities */
-import { Link } from 'react-router-dom';
+import { Link, Navigate } from 'react-router-dom';
 import SubHeader from './../Header/SubHeader';
 import logo from "../../assets/images/Logo.png";
 import PageTitle from './../PageTitle';
+import auth from '../../firebaseAuthToken';
+import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { useForm } from 'react-hook-form';
+import Swal from 'sweetalert2';
+import Loading from '../Loading';
 
 const Login = () => {
+
+    const { register, formState: { errors }, handleSubmit } = useForm();
+    const [
+        signInWithEmailAndPassword,
+        user,
+        loading,
+        error,
+    ] = useSignInWithEmailAndPassword(auth);
+
+    if (error) {
+        Swal.fire({
+            title: "Oops...",
+            text: (error?.message),
+            icon: "error"
+          });
+    }
+
+    if (loading) {
+        return <Loading />;
+    }
+
+    if (user) {
+        return <Navigate to="/admin" />
+    }
+
+    const handleLogin = event => {
+        signInWithEmailAndPassword(event.email, event.password);
+    }
+
     return (
         <>  <SubHeader />
             <PageTitle title="Real Estate | User Login" />
             <div className='bg-slate-700'>
                 <div className="container mx-auto w-[85%] sm:w-3/4 py-20">
                     <div className="flex justify-center items-center">
-                        <form className='max-w-[500px] bg-slate-200 py-10 sm:py-16 px-10 shadow-2xl'>
+                        <form onSubmit={handleSubmit(handleLogin)}
+                            className='max-w-[500px] bg-slate-200 py-10 sm:py-16 px-10 shadow-2xl'>
                             <div className="flex justify-center mb-14">
                                 <img className="w-[110px]" src={logo} alt="" />
                             </div>
+
+                            <label>
+                                {errors.email?.type === 'required' && <span className="label-text-alt text-red-500">{errors.email.message}</span>}
+                                {errors.email?.type === 'pattern' && <span className="label-text-alt text-red-500">{errors.email.message}</span>}
+                            </label>
                             <input
-                                className="w-[100%] border-2 border-gray-200 rounded-sm p-3 mb-5 bg-white text-black"
+                                className="w-[100%] p-3 mb-5 bg-white text-black"
                                 type="email"
                                 placeholder="Your Email"
-                                required />
+                                {...register("email", {
+                                    required: {
+                                        value: true,
+                                        message: 'Email is Required'
+                                    },
+                                    pattern: {
+                                        value: /[a-z0-9]+@[a-z]+\.[a-z]{2,3}/,
+                                        message: 'Provide a valid Email'
+                                    }
+                                })}
+                            />
+                            
+                            <label>
+                                {errors.password?.type === 'required' && <span className="label-text-alt text-red-500">{errors.password.message}</span>}
+                                {errors.password?.type === 'pattern' && <span className="label-text-alt text-red-500">{errors.password.message}</span>}
+                            </label>
                             <input
-                                className="w-[100%] border-2 border-gray-200 rounded-sm p-3 mb-5 bg-white text-black"
+                                className="w-[100%] p-3 mb-5 bg-white text-black"
                                 type="password"
                                 placeholder="Enter Password"
-                                required />
+                                {...register("password", {
+                                    required: {
+                                        value: true,
+                                        message: 'Password is Required'
+                                    },
+                                    pattern: {
+                                        value: /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/,
+                                        message: 'Min 8 characters, at least 1 letter, 1 number and 1 special character!'
+                                    }
+                                })}
+                            />
+
                             <div className="form-control">
                                 <label className="label cursor-pointer">
                                     <span className="label-text text-gray-600 text-[16px]">Remember Me</span>

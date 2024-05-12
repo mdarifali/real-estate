@@ -5,10 +5,20 @@ import image2 from "../../assets/images/card image1.jpg";
 import { FaHeart, FaUserCircle } from "react-icons/fa";
 import { MdClose } from "react-icons/md";
 import { useState } from "react";
+import auth from "../../firebaseAuthToken";
+import { useAuthState } from "react-firebase-hooks/auth";
+import { signOut } from "firebase/auth";
 
 const SubHeader = () => {
 
     const [isOpen, setIsOpen] = useState(false);
+
+    const [user] = useAuthState(auth);
+
+    const logout = () => {
+        signOut(auth);
+        // localStorage.removeItem('accessToken');
+    };
 
     return (
         <nav className="w-full bg-slate-700 shadow-md">
@@ -60,8 +70,8 @@ const SubHeader = () => {
                             {/* favorites dropdown menu start*/}
                             <div className="dropdown dropdown-bottom" >
                                 <div className="hidden lg:flex md:flex items-center justify-center px-3 gap-2 p-2 border rounded-full hover:bg-red-500 hover:border-red-500 transition-all" tabIndex={0} role="button">
-                                    <FaHeart className="text-white size-4 sm:size-4" />
-                                    <span className="text-white uppercase text-sm sm:text-base tracking-wider">Favorites</span>
+                                    <FaHeart className="text-white size-4" />
+                                    <span className="text-white uppercase text-base tracking-wider mb-1">Favorites</span>
                                 </div>
 
                                 <div className="sm:hidden p-2 cursor-pointer border rounded-full hover:bg-red-500 hover:border-red-500 transition-all" tabIndex={0} role="button">
@@ -99,18 +109,30 @@ const SubHeader = () => {
                             </div>
                             {/* favorites dropdown menu end*/}
                             <div className="cursor-pointer">
-                                <Link to="/login">
-                                    <div className="hidden lg:flex md:flex items-center justify-center px-3 gap-2 p-2 border rounded-full hover:bg-red-500 hover:border-red-500 transition-all">
-                                        <FaUserCircle className="text-white size-4 sm:size-4" />
-                                        <span className=" text-white uppercase text-sm sm:text-base tracking-wider">Login</span>
-                                    </div>
-                                </Link>
 
-                                <Link to="/login">
+                                {
+                                    user ?
+
+                                        <div onClick={logout} className="hidden lg:flex md:flex items-center justify-center px-3 gap-2 p-2 border rounded-full hover:bg-red-500 hover:border-red-500 transition-all">
+                                            <FaUserCircle className="text-white size-4" />
+                                            <span className=" text-white uppercase text-base tracking-wider mb-1">Logout</span>
+                                        </div>
+
+                                        :
+
+                                        <Link to="/login">
+                                            <div className="hidden lg:flex md:flex items-center justify-center px-3 gap-2 p-2 border rounded-full hover:bg-red-500 hover:border-red-500 transition-all">
+                                                <FaUserCircle className="text-white size-4" />
+                                                <span className=" text-white uppercase text-base tracking-wider mb-1">Login</span>
+                                            </div>
+                                        </Link>
+                                }
+
+                                {/* <Link to="/login">
                                     <div className="sm:hidden p-2 cursor-pointer border rounded-full hover:bg-red-500 hover:border-red-500 transition-all">
                                         <FaUserCircle className="text-white size-6" />
                                     </div>
-                                </Link>
+                                </Link> */}
                             </div>
                         </div>
                     </div>
