@@ -43,7 +43,7 @@ const Register = () => {
                     <div className="flex justify-center items-center">
                         <form
                             onSubmit={handleSubmit}
-                            className='max-w-[500px] bg-slate-200 py-10 sm:py-16 px-10'>
+                            className='max-w-[500px] bg-slate-200 py-10 sm:py-16 px-10 shadow-2xl'>
                             <div className="flex justify-center mb-14">
                                 <img className="w-[110px]" src={logo} alt="" />
                             </div>

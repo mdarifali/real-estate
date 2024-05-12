@@ -119,13 +119,13 @@ const SubHeader = () => {
 
             {/* mobile menu items start */}
             <div
-                className={`${!isOpen ? 'hidden' : 'block'} absolute z-10 w-full bg-black transition-all delay-150 duration-200`}>
+                className={`${!isOpen ? 'hidden' : 'block'} absolute z-10 w-full bg-[#151515] transition-all delay-200 duration-200`}>
                 <div className="space-y-1 px-2 pb-8 pt-8 text-center">
-                    <Link to="/" className="text-white hover:bg-red-500 hover:scale-110 transition-all block px-3 py-2 text-base uppercase font-normal">Home</Link>
-                    <Link to="/propertis" className="text-white hover:bg-red-500 hover:scale-110 transition-all block px-3 py-2 text-base uppercase font-normal">Properties</Link>
-                    <Link to="/services" className="text-white hover:bg-red-500 hover:scale-110 uppercase transition-all block px-3 py-2 text-base font-normal">Services</Link>
-                    <Link to="/about" className="text-white hover:bg-red-500 hover:scale-110 transition-all block uppercase px-3 py-2 text-base font-normal">About</Link>
-                    <Link to="/contact" className="text-white hover:bg-red-500 hover:scale-110 transition-all block px-3 py-2 text-base uppercase font-normal">Contact</Link>
+                    <Link to="/" className="text-white hover:bg-red-500 transition-all block px-3 py-2 text-base uppercase font-normal">Home</Link>
+                    <Link to="/propertis" className="text-white hover:bg-red-500 transition-all block px-3 py-2 text-base uppercase font-normal">Properties</Link>
+                    <Link to="/services" className="text-white hover:bg-red-500 uppercase transition-all block px-3 py-2 text-base font-normal">Services</Link>
+                    <Link to="/about" className="text-white hover:bg-red-500 transition-all block uppercase px-3 py-2 text-base font-normal">About</Link>
+                    <Link to="/contact" className="text-white hover:bg-red-500 transition-all block px-3 py-2 text-base uppercase font-normal">Contact</Link>
                 </div>
             </div>
             {/* mobile menu items end*/}

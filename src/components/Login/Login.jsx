@@ -11,7 +11,7 @@ const Login = () => {
             <div className='bg-slate-700'>
                 <div className="container mx-auto w-[85%] sm:w-3/4 py-20">
                     <div className="flex justify-center items-center">
-                        <form className='max-w-[500px] bg-slate-200 py-10 sm:py-16 px-10'>
+                        <form className='max-w-[500px] bg-slate-200 py-10 sm:py-16 px-10 shadow-2xl'>
                             <div className="flex justify-center mb-14">
                                 <img className="w-[110px]" src={logo} alt="" />
                             </div>
