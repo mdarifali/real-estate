@@ -8,12 +8,13 @@ import { useState } from "react";
 import auth from "../../firebaseAuthToken";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { signOut } from "firebase/auth";
+import useHook from "../Hook/useHook";
 
 const SubHeader = () => {
 
     const [isOpen, setIsOpen] = useState(false);
-
-    const [user] = useAuthState(auth);
+    const [user] = useHook()
+    // const [user] = useAuthState(auth);
 
     const logout = () => {
         signOut(auth);
@@ -69,14 +70,27 @@ const SubHeader = () => {
                         <div className="absolute right-[55px] sm:right-0 md:right-[67px] lg:right-0 sm:relative md:absolute lg:relative flex justify-between items-center gap-3">
                             {/* favorites dropdown menu start*/}
                             <div className="dropdown dropdown-bottom" >
-                                <div className="hidden lg:flex md:flex items-center justify-center px-3 gap-2 p-2 border rounded-full hover:bg-red-500 hover:border-red-500 transition-all" tabIndex={0} role="button">
-                                    <FaHeart className="text-white size-4" />
-                                    <span className="text-white uppercase text-base tracking-wider mb-1">Favorites</span>
-                                </div>
 
-                                <div className="sm:hidden p-2 cursor-pointer border rounded-full hover:bg-red-500 hover:border-red-500 transition-all" tabIndex={0} role="button">
-                                    <FaHeart className="text-white size-6" />
-                                </div>
+                                {
+                                    user ?
+
+                                        <div className="p-2 border rounded-full hover:bg-red-500 hover:border-red-500 transition-all" tabIndex={0} role="button">
+                                            <FaHeart className="text-white size-6" />
+                                        </div>
+
+                                        :
+
+                                        <>
+                                            <div className="hidden lg:flex md:flex items-center justify-center px-3 gap-2 p-2 border rounded-full hover:bg-red-500 hover:border-red-500 transition-all" tabIndex={0} role="button">
+                                                <FaHeart className="text-white size-4" />
+                                                <span className="text-white uppercase text-base tracking-wider mb-1">Favorites</span>
+                                            </div>
+                                            <div className="sm:hidden p-2 cursor-pointer border rounded-full hover:bg-red-500 hover:border-red-500 transition-all" tabIndex={0} role="button">
+                                                <FaHeart className="text-white size-6" />
+                                            </div>
+                                        </>
+                                }
+
                                 <div tabIndex={0} className="dropdown-content z-[1] card rounded-none border card-compact w-[400px] p-2 mt-6 shadow-xl bg-white left-[-240px]">
                                     <div className="card-body">
                                         <div className="p-4">
@@ -112,27 +126,41 @@ const SubHeader = () => {
 
                                 {
                                     user ?
-
-                                        <div onClick={logout} className="hidden lg:flex md:flex items-center justify-center px-3 gap-2 p-2 border rounded-full hover:bg-red-500 hover:border-red-500 transition-all">
-                                            <FaUserCircle className="text-white size-4" />
-                                            <span className=" text-white uppercase text-base tracking-wider mb-1">Logout</span>
+                                        <div className="dropdown dropdown-end">
+                                            <div tabIndex={0} role="button">
+                                                <div className="p-2 mt-1 border rounded-full hover:bg-red-500 hover:border-red-500 transition-all">
+                                                    <FaUserCircle className="text-white size-6" />
+                                                </div>
+                                            </div>
+                                            <ul tabIndex={0} className="menu menu-sm dropdown-content mt-5 z-[1] p-5 shadow bg-white w-52">
+                                                <li>
+                                                    <Link to="/profile" className="justify-between">
+                                                        Profile
+                                                        <span className="badge">New</span>
+                                                    </Link>
+                                                </li>
+                                                <li><Link to='/admin'>Admin</Link></li>
+                                                <li onClick={logout}><a>Logout</a></li>
+                                            </ul>
                                         </div>
 
                                         :
 
-                                        <Link to="/login">
-                                            <div className="hidden lg:flex md:flex items-center justify-center px-3 gap-2 p-2 border rounded-full hover:bg-red-500 hover:border-red-500 transition-all">
-                                                <FaUserCircle className="text-white size-4" />
-                                                <span className=" text-white uppercase text-base tracking-wider mb-1">Login</span>
-                                            </div>
-                                        </Link>
+                                        <>
+                                            <Link to="/login">
+                                                <div className="hidden lg:flex md:flex items-center justify-center px-3 gap-2 p-2 border rounded-full hover:bg-red-500 hover:border-red-500 transition-all">
+                                                    <FaUserCircle className="text-white size-4" />
+                                                    <span className=" text-white uppercase text-base tracking-wider mb-1">Login</span>
+                                                </div>
+                                            </Link>
+                                            <Link to="/login">
+                                                <div className="sm:hidden p-2 cursor-pointer border rounded-full hover:bg-red-500 hover:border-red-500 transition-all">
+                                                    <FaUserCircle className="text-white size-6" />
+                                                </div>
+                                            </Link>
+                                        </>
                                 }
 
-                                {/* <Link to="/login">
-                                    <div className="sm:hidden p-2 cursor-pointer border rounded-full hover:bg-red-500 hover:border-red-500 transition-all">
-                                        <FaUserCircle className="text-white size-6" />
-                                    </div>
-                                </Link> */}
                             </div>
                         </div>
                     </div>

@@ -8,35 +8,62 @@ import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { useForm } from 'react-hook-form';
 import Swal from 'sweetalert2';
 import Loading from '../Loading';
+import { useState } from 'react';
 
 const Login = () => {
 
-    const { register, formState: { errors }, handleSubmit } = useForm();
-    const [
-        signInWithEmailAndPassword,
-        user,
-        loading,
-        error,
-    ] = useSignInWithEmailAndPassword(auth);
+    const [user, setUser] = useState([]);
+    const { register, formState: { errors }, handleSubmit, reset } = useForm();
+    // const [
+    //     signInWithEmailAndPassword,
+    //     user,
+    //     loading,
+    //     error,
+    // ] = useSignInWithEmailAndPassword(auth);
 
-    if (error) {
-        Swal.fire({
-            title: "Oops...",
-            text: (error?.message),
-            icon: "error"
-          });
-    }
+    // if (error) {
+    //     Swal.fire({
+    //         title: "Oops...",
+    //         text: (error?.message),
+    //         icon: "error"
+    //       });
+    // }
 
-    if (loading) {
-        return <Loading />;
-    }
+    // if (loading) {
+    //     return <Loading />;
+    // }
 
     if (user) {
         return <Navigate to="/admin" />
     }
 
-    const handleLogin = event => {
-        signInWithEmailAndPassword(event.email, event.password);
+    const handleLogin = e => {
+        const email = e.email
+        const password = e.password
+        const data = { email, password }
+
+        fetch(`http://localhost:5000/login`, {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                setUser(data);
+
+                if (data.error) {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'User & Password not match',
+                        timer: 3500
+                    })
+                }
+            })
+
+        reset();
     }
 
     return (

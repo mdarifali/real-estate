@@ -12,37 +12,70 @@ import Swal from "sweetalert2";
 
 const Register = () => {
 
-    const { register, formState: { errors }, handleSubmit } = useForm();
-    const [
-        createUserWithEmailAndPassword,
-        user,
-        loading,
-        error
-    ] = useCreateUserWithEmailAndPassword(auth);
+    const { register, formState: { errors }, handleSubmit, reset } = useForm();
+    // const [
+    //     createUserWithEmailAndPassword,
+    //     user,
+    //     loading,
+    //     error
+    // ] = useCreateUserWithEmailAndPassword(auth);
 
-    if (error) {
-        Swal.fire({
-            title: "Oops...",
-            text: (error?.message),
-            icon: "error"
-        });
-    }
+    // if (error) {
+    //     Swal.fire({
+    //         title: "Oops...",
+    //         text: (error?.message),
+    //         icon: "error"
+    //     });
+    // }
 
-    if (loading) {
-        return <Loading />;
-    }
+    // if (loading) {
+    //     return <Loading />;
+    // }
 
-    if (user) {
-        Swal.fire({
-            title: "Registration Success",
-            text: (user.user.email),
-            icon: "success"
-        });
-    }
+    // if (user) {
+    //     Swal.fire({
+    //         title: "Registration Success",
+    //         text: (user.user.email),
+    //         icon: "success"
+    //     });
+    // }
 
-    const handleSingup = async event => {
-        await createUserWithEmailAndPassword(event.email, event.password);
+    const handleSingup = e => {
+        // await createUserWithEmailAndPassword(event.email, event.password);
         // await updateProfile({ displayName: data.name });
+        const name = e.name
+        const email = e.email
+        const password = e.password
+        const phone = e.phone
+        const data = { name, email, phone, password }
+
+        fetch(`http://localhost:5000/user`, {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                if (data.success) {
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'User registration successfuly',
+                        timer: 3500
+                    })
+                }
+                if (data.error) {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'User already existed',
+                        timer: 3500
+                    })
+                }
+            })
+
+        reset();
 
     }
 
@@ -60,7 +93,6 @@ const Register = () => {
                                 <img className="w-[110px]" src={logo} alt="" />
                             </div>
 
-
                             <label>
                                 {errors.name?.type === 'required' && <span className="label-text-alt text-red-500">{errors.name.message}</span>}
                             </label>
@@ -69,6 +101,21 @@ const Register = () => {
                                 type="text"
                                 placeholder="Full Name"
                                 {...register("name", {
+                                    required: {
+                                        value: true,
+                                        message: 'Name is Required'
+                                    }
+                                })}
+                            />
+
+                            <label>
+                                {errors.phone?.type === 'required' && <span className="label-text-alt text-red-500">{errors.phone.message}</span>}
+                            </label>
+                            <input
+                                className="w-[100%] p-3 mb-5 bg-white text-black"
+                                type="text"
+                                placeholder="Phone Number"
+                                {...register("phone", {
                                     required: {
                                         value: true,
                                         message: 'Name is Required'

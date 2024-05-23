@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 import logo from "../../assets/images/Logo.png";
 import image1 from "../../assets/images/card image1.jpg";
 import image2 from "../../assets/images/card image1.jpg";
@@ -8,15 +8,16 @@ import { useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import auth from "../../firebaseAuthToken";
 import { signOut } from "firebase/auth";
+import useHook from "../Hook/useHook";
 
 const Header = () => {
 
     const [isOpen, setIsOpen] = useState(false);
-
-    const [user] = useAuthState(auth);
+    // const [user] = useAuthState(auth);
+    const [user, setUser] = useHook();
 
     const logout = () => {
-        signOut(auth);
+        return setUser(false)
         // localStorage.removeItem('accessToken');
     };
 
@@ -135,10 +136,10 @@ const Header = () => {
                                             </div>
                                             <ul tabIndex={0} className="menu menu-sm dropdown-content mt-5 z-[1] p-5 shadow bg-white w-52">
                                                 <li>
-                                                    <a className="justify-between">
+                                                    <Link to="/profile" className="justify-between">
                                                         Profile
                                                         <span className="badge">New</span>
-                                                    </a>
+                                                    </Link>
                                                 </li>
                                                 <li><Link to='/admin'>Admin</Link></li>
                                                 <li onClick={logout}><a>Logout</a></li>

@@ -11,6 +11,7 @@ import Login from "./components/Login/Login";
 import Register from "./components/Login/Register";
 import Admin from "./components/Admin/Admin";
 import PrivateRoute from "./components/Private Route/PrivateRoute";
+import Profile from "./components/Profile/Profile";
 
 
 function App() {
@@ -29,6 +30,11 @@ function App() {
         <Route path="/admin" element={
           <PrivateRoute>
             <Admin />
+          </PrivateRoute>
+        } />
+        <Route path="/profile" element={
+          <PrivateRoute>
+            <Profile/>
           </PrivateRoute>
         } />
         <Route path="*" element={<NotFound />} />
